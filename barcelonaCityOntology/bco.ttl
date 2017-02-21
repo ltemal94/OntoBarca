@@ -75,6 +75,17 @@
 
 <http://www.biocenit.cat/ontologies/cao.owl#Water_distribution_network> rdfs:subClassOf :Water_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_Conditionning_network_component
+
+:Air_Conditionning_network_component a owl:Class ;
+	rdfs:subClassOf :Network_infrastructure_component .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_conditionning_network
+
+:Air_conditionning_network a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> ;
+	rdfs:comment "Is it the same as Thermal network ?"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airline_network
 
 :Airline_network a owl:Class ;
@@ -235,6 +246,13 @@ Each municipality typically represents one significant urban settlement, of any 
 	rdfs:subClassOf :Section ;
 	rdfs:comment "Census section: section where the census is conducted"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Central_air_conditioning
+
+:Central_air_conditioning a owl:Class ;
+	rdfs:subClassOf :Air_Conditionning_network_component ;
+	rdfs:comment """Central (ducted) air conditioning offers whole-house or large-commercial-space cooling, and often offers moderate multi-zone temperature control capability by the addition of air-louver-control boxes.
+In central air conditioning, the inside heat-exchanger is typically placed inside the central furnace/AC unit of the forced air heating system which is then used in the summer to distribute chilled air throughout a residence or commercial building. (source: Wikipedia)"""@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Central_thermal_network
 
 :Central_thermal_network a owl:Class ;
@@ -274,20 +292,46 @@ _:genid13 a owl:Restriction ;
 :City_alert a owl:Class ;
 	rdfs:subClassOf :City_event .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#City_demographical_study
+
+:City_demographical_study a owl:Class ;
+	rdfs:subClassOf :City_statistical_study ;
+	rdfs:comment "Demography is the statistical study of populations, especially human beings. As a very general science, it can analyse any kind of dynamic living population, i.e., one that changes over time or space (see population dynamics). Demography encompasses the study of the size, structure, and distribution of these populations, and spatial or temporal changes in them in response to birth, migration, ageing, and death.  (source:wikipedia)"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#City_event
 
 :City_event a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#CityAnatomyThing> .
+	rdfs:subClassOf schema:Event .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#City_exportation
+
+:City_exportation a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#City_governance_process> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#City_gate
 
 :City_gate a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#City_statistical_study
+
+:City_statistical_study a owl:Class ;
+	rdfs:subClassOf :City_study .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#City_study
+
+:City_study a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#City_evaluation_process> .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Cold_thermal_network
 
 :Cold_thermal_network a owl:Class ;
 	rdfs:subClassOf :Thermal_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Continents_group
+
+:Continents_group a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#DayCare
 
@@ -440,16 +484,16 @@ S: (n) hospital (a medical institution where sick or injured people are given me
 	rdfs:comment "An island or isle is any piece of sub-continental land that is surrounded by water.[2] Very small islands such as emergent land features on atolls can be called islets, skerries, cays or keys. An island in a river or a lake island may be called an eyot or ait, and a small island off the coast may be called a holm. A grouping of geographically or geologically related islands is called an archipelago, e.g. the Philippines. (source: wikipedia)"@en , """S: (n) island (a land mass (smaller than a continent) that is surrounded by water)
 S: (n) island (a zone or area resembling an island) (source: wordnet)"""@en .
 # 
-# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Island_group
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Islands_group
 
-:Island_group a owl:Class ;
+:Islands_group a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> , _:genid18 .
 
 _:genid18 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Island .
 
-:Island_group rdfs:comment "An archipelago, sometimes called an island group or island chain, is a chain, cluster or collection of islands. The word archipelago is derived from the Greek ἄρχι- – arkhi- (\"chief\") and πέλαγος – pélagos (\"sea\") through the Italian arcipelago. In Italian, possibly following a tradition of antiquity, the Archipelago (from medieval Greek *ἀρχιπέλαγος and Latin archipelagus) was the proper name for the Aegean Sea and, later, usage shifted to refer to the Aegean Islands (since the sea is remarkable for its large number of islands). It is now used to refer to any island group or, sometimes, to a sea containing a small number of scattered islands. (source: wikipedia)"@en .
+:Islands_group rdfs:comment "An archipelago, sometimes called an island group or island chain, is a chain, cluster or collection of islands. The word archipelago is derived from the Greek ἄρχι- – arkhi- (\"chief\") and πέλαγος – pélagos (\"sea\") through the Italian arcipelago. In Italian, possibly following a tradition of antiquity, the Archipelago (from medieval Greek *ἀρχιπέλαγος and Latin archipelagus) was the proper name for the Aegean Sea and, later, usage shifted to refer to the Aegean Islands (since the sea is remarkable for its large number of islands). It is now used to refer to any island group or, sometimes, to a sea containing a small number of scattered islands. (source: wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Lighting_network
 
@@ -778,6 +822,11 @@ _:genid34 a owl:Restriction ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> ;
 	rdfs:comment "A thoroughfare is a transportation route connecting one location to another.[1] On land a thoroughfare may refer to anything from a multi-lane highway with grade separated junctions, to a rough trail.[citation needed] Thoroughfares used by a variety of traffic, such as cars on roads and highways. On water a thoroughfare may refer to a strait, channel or waterway. The term may also refer to access to a route, distinct from the route itself. In other words thoroughfare may refer to the legal right to use a particular way. (source:Wikipedia)"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Traffic
+
+:Traffic a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Man_made_flow> .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_station
 
 :Train_station a owl:Class ;
@@ -864,6 +913,11 @@ _:genid44 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_traffic
+
+:Tramway_traffic a owl:Class ;
+	rdfs:subClassOf :Traffic .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tunnel
 
 :Tunnel a owl:Class ;
@@ -909,6 +963,12 @@ _:genid47 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Water_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_supply_company
+
+:Water_supply_company a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#City_formal_organization> ;
+	rdfs:comment "a Water supply company is a company which offers the service of supplying water to buildings in a city."@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_supplying_network
 
 :Water_supplying_network a owl:Class ;
@@ -944,6 +1004,11 @@ _:genid49 a owl:Restriction ;
 
 :Wirelss_point a owl:Class ;
 	rdfs:subClassOf :Wireless_network_component .
+# 
+# https://schema.org/Event
+
+schema:Event a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#SchemaOrgThing> .
 # 
 # https://schema.org/ImageObject
 
