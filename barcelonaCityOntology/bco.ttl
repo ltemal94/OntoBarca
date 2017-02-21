@@ -78,7 +78,11 @@
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_Conditionning_network_component
 
 :Air_Conditionning_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid1 .
+
+_:genid1 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+	owl:someValuesFrom :Air_conditionning_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_conditionning_network
 
@@ -89,18 +93,18 @@
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airline_network
 
 :Airline_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid1 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid2 .
 
-_:genid1 a owl:Restriction ;
+_:genid2 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Airline_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airline_network_component
 
 :Airline_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid2 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid3 .
 
-_:genid2 a owl:Restriction ;
+_:genid3 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Airline_network .
 # 
@@ -119,6 +123,11 @@ _:genid2 a owl:Restriction ;
 
 :Axes_street a owl:Class ;
 	rdfs:subClassOf :Street .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Barcalona_tunnel
+
+:Barcalona_tunnel a owl:Class ;
+	rdfs:subClassOf :Tunnel .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Barcelona_postal_code
 
@@ -156,54 +165,54 @@ In modern American usage it often means a wide, multi-lane arterial thoroughfare
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_lane
 
 :Bus_lane a owl:Class ;
-	rdfs:subClassOf :Bus_network_component , _:genid3 .
+	rdfs:subClassOf :Bus_network_component , _:genid4 .
 
-_:genid3 a owl:Restriction ;
+_:genid4 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Bus_routes_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_network
 
 :Bus_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid4 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid5 .
 
-_:genid4 a owl:Restriction ;
+_:genid5 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Bus_network_component .
 
-:Bus_network rdfs:subClassOf _:genid5 .
+:Bus_network rdfs:subClassOf _:genid6 .
 
-_:genid5 a owl:Restriction ;
+_:genid6 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom _:genid6 .
+	owl:someValuesFrom _:genid7 .
 
-_:genid6 owl:intersectionOf _:genid8 .
+_:genid7 owl:intersectionOf _:genid9 .
+
+_:genid9 a rdf:List ;
+	rdf:first :Bus_routes_network ;
+	rdf:rest _:genid8 .
 
 _:genid8 a rdf:List ;
-	rdf:first :Bus_routes_network ;
-	rdf:rest _:genid7 .
-
-_:genid7 a rdf:List ;
 	rdf:first :Bus_stops_network ;
 	rdf:rest rdf:nil .
 
-_:genid6 a owl:Class .
+_:genid7 a owl:Class .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_network_component
 
 :Bus_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid9 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid10 .
 
-_:genid9 a owl:Restriction ;
+_:genid10 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Bus_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_routes_network
 
 :Bus_routes_network a owl:Class ;
-	rdfs:subClassOf :Bus_network , _:genid10 .
+	rdfs:subClassOf :Bus_network , _:genid11 .
 
-_:genid10 a owl:Restriction ;
+_:genid11 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Bus_network .
 
@@ -212,18 +221,18 @@ _:genid10 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_stop
 
 :Bus_stop a owl:Class ;
-	rdfs:subClassOf :Bus_network_component , _:genid11 .
+	rdfs:subClassOf :Bus_network_component , _:genid12 .
 
-_:genid11 a owl:Restriction ;
+_:genid12 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Bus_stops_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_stops_network
 
 :Bus_stops_network a owl:Class ;
-	rdfs:subClassOf :Bus_network , _:genid12 .
+	rdfs:subClassOf :Bus_network , _:genid13 .
 
-_:genid12 a owl:Restriction ;
+_:genid13 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Bus_network .
 # 
@@ -266,16 +275,20 @@ In central air conditioning, the inside heat-exchanger is typically placed insid
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Charging_station_network
 
 :Charging_station_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid13 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid14 .
 
-_:genid13 a owl:Restriction ;
+_:genid14 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Charging_station .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Charging_station_network_component
 
 :Charging_station_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid15 .
+
+_:genid15 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+	owl:someValuesFrom :Charging_station_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Citizen_service_point
 
@@ -398,11 +411,23 @@ _:genid13 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Fuel_network
 
 :Fuel_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid14 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid16 .
 
-_:genid14 a owl:Restriction ;
+_:genid16 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom :Fuel .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gallery
+
+:Gallery a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Physical_built_domain_element> ;
+	rdfs:comment """S: (n) gallery (spectators at a golf or tennis match)
+S: (n) veranda, verandah, gallery (a porch along the outside of a building (sometimes partly enclosed))
+S: (n) gallery, art gallery, picture gallery (a room or series of rooms where works of art are exhibited)
+S: (n) gallery (a long usually narrow room used for some specific purpose) \"shooting gallery\"
+S: (n) gallery (a covered corridor (especially one extending along the wall of a building and supported with arches or columns))
+S: (n) gallery (narrow recessed balcony area along an upper floor on the interior of a building; usually marked by a colonnade)
+S: (n) drift, heading, gallery (a horizontal (or nearly horizontal) passageway in a mine) \"they dug a drift parallel with the vein\"""" .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas
 
@@ -422,24 +447,24 @@ _:genid14 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas_network
 
 :Gas_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid15 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid17 .
 
-_:genid15 a owl:Restriction ;
+_:genid17 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Gas_Tank .
 
-:Gas_network rdfs:subClassOf _:genid16 .
+:Gas_network rdfs:subClassOf _:genid18 .
 
-_:genid16 a owl:Restriction ;
+_:genid18 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom :Gas .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas_network_component
 
 :Gas_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid17 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid19 .
 
-_:genid17 a owl:Restriction ;
+_:genid19 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Gas_network .
 # 
@@ -487,9 +512,9 @@ S: (n) island (a zone or area resembling an island) (source: wordnet)"""@en .
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Islands_group
 
 :Islands_group a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> , _:genid18 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> , _:genid20 .
 
-_:genid18 a owl:Restriction ;
+_:genid20 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Island .
 
@@ -513,9 +538,9 @@ _:genid18 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Municipality
 
 :Municipality a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid19 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid21 .
 
-_:genid19 a owl:Restriction ;
+_:genid21 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
 	owl:hasValue :Catalonia .
 
@@ -539,9 +564,9 @@ _:genid19 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Network_basic_drawing
 
 :Network_basic_drawing a owl:Class ;
-	rdfs:subClassOf :Basic_drawing , _:genid20 .
+	rdfs:subClassOf :Basic_drawing , _:genid22 .
 
-_:genid20 a owl:Restriction ;
+_:genid22 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
 # 
@@ -603,9 +628,9 @@ _:genid20 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Power_network_component
 
 :Power_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid21 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid23 .
 
-_:genid21 a owl:Restriction ;
+_:genid23 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Power_network .
 # 
@@ -638,23 +663,27 @@ _:genid21 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railway_network
 
 :Railway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid22 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid24 .
 
-_:genid22 a owl:Restriction ;
+_:genid24 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Railway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railway_network_component
 
 :Railway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid25 .
+
+_:genid25 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+	owl:someValuesFrom :Railway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railways_routes_network
 
 :Railways_routes_network a owl:Class ;
-	rdfs:subClassOf :Railway_network , _:genid23 .
+	rdfs:subClassOf :Railway_network , _:genid26 .
 
-_:genid23 a owl:Restriction ;
+_:genid26 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Railway_network .
 # 
@@ -667,9 +696,9 @@ _:genid23 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Road_network
 
 :Road_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid24 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid27 .
 
-_:genid24 a owl:Restriction ;
+_:genid27 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Thoroughfare .
 # 
@@ -697,16 +726,20 @@ _:genid24 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensors_network
 
 :Sensors_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid25 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid28 .
 
-_:genid25 a owl:Restriction ;
+_:genid28 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Sensor .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensors_network_component
 
 :Sensors_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid29 .
+
+_:genid29 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+	owl:someValuesFrom :Sensors_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Service_public_agency
 
@@ -722,9 +755,9 @@ _:genid25 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sewer_network_component
 
 :Sewer_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid26 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid30 .
 
-_:genid26 a owl:Restriction ;
+_:genid30 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Sewer_network> .
 # 
@@ -752,9 +785,9 @@ _:genid26 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_lines_network
 
 :Subway_lines_network a owl:Class ;
-	rdfs:subClassOf :Subway_network , _:genid27 .
+	rdfs:subClassOf :Subway_network , _:genid31 .
 
-_:genid27 a owl:Restriction ;
+_:genid31 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Subway_network .
 
@@ -763,36 +796,36 @@ _:genid27 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_network
 
 :Subway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid28 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid32 .
 
-_:genid28 a owl:Restriction ;
+_:genid32 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Subway_network_component .
 
-:Subway_network rdfs:subClassOf _:genid29 .
+:Subway_network rdfs:subClassOf _:genid33 .
 
-_:genid29 a owl:Restriction ;
+_:genid33 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom _:genid30 .
+	owl:someValuesFrom _:genid34 .
 
-_:genid30 owl:intersectionOf _:genid32 .
+_:genid34 owl:intersectionOf _:genid36 .
 
-_:genid32 a rdf:List ;
+_:genid36 a rdf:List ;
 	rdf:first :Subway_lines_network ;
-	rdf:rest _:genid31 .
+	rdf:rest _:genid35 .
 
-_:genid31 a rdf:List ;
+_:genid35 a rdf:List ;
 	rdf:first :Subway_stations_network ;
 	rdf:rest rdf:nil .
 
-_:genid30 a owl:Class .
+_:genid34 a owl:Class .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_network_component
 
 :Subway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid33 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid37 .
 
-_:genid33 a owl:Restriction ;
+_:genid37 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Subway_network .
 # 
@@ -805,9 +838,9 @@ _:genid33 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_stations_network
 
 :Subway_stations_network a owl:Class ;
-	rdfs:subClassOf :Subway_network , _:genid34 .
+	rdfs:subClassOf :Subway_network , _:genid38 .
 
-_:genid34 a owl:Restriction ;
+_:genid38 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Subway_network .
 # 
@@ -830,60 +863,60 @@ _:genid34 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_station
 
 :Train_station a owl:Class ;
-	rdfs:subClassOf :Railway_network_component , _:genid35 .
+	rdfs:subClassOf :Railway_network_component , _:genid39 .
 
-_:genid35 a owl:Restriction ;
+_:genid39 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Railway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_stations_network
 
 :Train_stations_network a owl:Class ;
-	rdfs:subClassOf :Railway_network , _:genid36 .
+	rdfs:subClassOf :Railway_network , _:genid40 .
 
-_:genid36 a owl:Restriction ;
+_:genid40 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Railway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway
 
 :Tramway a owl:Class ;
-	rdfs:subClassOf :Tramway_network_component , _:genid37 .
+	rdfs:subClassOf :Tramway_network_component , _:genid41 .
 
-_:genid37 a owl:Restriction ;
+_:genid41 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_network
 
 :Tramway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid38 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid42 .
 
-_:genid38 a owl:Restriction ;
+_:genid42 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_network_component
 
 :Tramway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid39 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid43 .
 
-_:genid39 a owl:Restriction ;
+_:genid43 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_routes_network
 
 :Tramway_routes_network a owl:Class ;
-	rdfs:subClassOf :Tramway_network , _:genid40 .
+	rdfs:subClassOf :Tramway_network , _:genid44 .
 
-_:genid40 a owl:Restriction ;
+_:genid44 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway .
 
-:Tramway_routes_network rdfs:subClassOf _:genid41 .
+:Tramway_routes_network rdfs:subClassOf _:genid45 .
 
-_:genid41 a owl:Restriction ;
+_:genid45 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 
@@ -892,24 +925,24 @@ _:genid41 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_stop
 
 :Tramway_stop a owl:Class ;
-	rdfs:subClassOf :Tramway_network_component , _:genid42 .
+	rdfs:subClassOf :Tramway_network_component , _:genid46 .
 
-_:genid42 a owl:Restriction ;
+_:genid46 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_stops_nework
 
 :Tramway_stops_nework a owl:Class ;
-	rdfs:subClassOf :Tramway_network , _:genid43 .
+	rdfs:subClassOf :Tramway_network , _:genid47 .
 
-_:genid43 a owl:Restriction ;
+_:genid47 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway_stop .
 
-:Tramway_stops_nework rdfs:subClassOf _:genid44 .
+:Tramway_stops_nework rdfs:subClassOf _:genid48 .
 
-_:genid44 a owl:Restriction ;
+_:genid48 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 # 
@@ -927,9 +960,9 @@ _:genid44 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tunnel_network
 
 :Tunnel_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid45 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid49 .
 
-_:genid45 a owl:Restriction ;
+_:genid49 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tunnel .
 # 
@@ -948,18 +981,18 @@ _:genid45 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_network
 
 :Water_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid46 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid50 .
 
-_:genid46 a owl:Restriction ;
+_:genid50 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Water> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_network_component
 
 :Water_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid47 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid51 .
 
-_:genid47 a owl:Restriction ;
+_:genid51 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Water_network .
 # 
@@ -982,9 +1015,9 @@ _:genid47 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wireless_network
 
 :Wireless_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Data_communication_network> , _:genid48 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Data_communication_network> , _:genid52 .
 
-_:genid48 a owl:Restriction ;
+_:genid52 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Wirelss_point .
 
@@ -994,9 +1027,9 @@ Wireless networking is a method by which homes, telecommunications networks and 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wireless_network_component
 
 :Wireless_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid49 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid53 .
 
-_:genid49 a owl:Restriction ;
+_:genid53 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Wireless_network .
 # 
