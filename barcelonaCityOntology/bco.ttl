@@ -18,6 +18,29 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#PopulationOfOltherThan16YearsOld
+
+:PopulationOfOltherThan16YearsOld a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasPopulation .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#hasCode
+
+:hasCode a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#hasPopulation
+
+:hasPopulation a owl:ObjectProperty .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#hasPopulationPerHome
+
+:hasPopulationPerHome a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasPopulation .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#hasTotalPopulation
+
+:hasTotalPopulation a owl:ObjectProperty ;
+	rdfs:subPropertyOf :hasPopulation .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#isPostalCodeOf
 
 :isPostalCodeOf a owl:ObjectProperty ;
@@ -267,6 +290,11 @@ In central air conditioning, the inside heat-exchanger is typically placed insid
 :Central_thermal_network a owl:Class ;
 	rdfs:subClassOf :Thermal_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Change_residence_demography
+
+:Change_residence_demography a owl:Class ;
+	rdfs:subClassOf :City_demographical_study .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Charging_station
 
 :Charging_station a owl:Class ;
@@ -352,6 +380,11 @@ _:genid15 a owl:Restriction ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Building> ;
 	rdfs:comment "Child care or day care is the care of a child during the day by a person other than the child's legal guardians, typically performed by someone outside the child's immediate family. Day care is typically an ongoing service during specific periods, such as the parents' time at work. The service is known as child care in the United Kingdom, crèche in Ireland and New Zealand, and child care or day care in North America and Australia (although child care also has a broader meaning). The vast majority of childcare is still performed by the parents, in-house nannies or through informal arrangements with relatives, neighbors or friends. Child care in the child's own home is traditionally provided by a nanny or au pair, or by extended family members including grandparents, aunts and uncles. Child care is provided in nurseries or crèches or by a nanny or family child care provider caring for children in their own homes. It can also take on a more formal structure, with education, child development, discipline and even preschool education falling into the fold of services. (spurce:wikipedia)"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Deaths_demography
+
+:Deaths_demography a owl:Class ;
+	rdfs:subClassOf :City_demographical_study .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Decoratif_fountain
 
 :Decoratif_fountain a owl:Class ;
@@ -384,6 +417,11 @@ _:genid15 a owl:Restriction ;
 :Elementary_school a owl:Class ;
 	rdfs:subClassOf :School ;
 	rdfs:comment "A primary school or elementary school is a school in which children receive primary or elementary education from the age of about five to twelve, coming before secondary school and after preschool. It is the first stage of compulsory education in most parts of the world, and is normally available without charge, but may be offered in a fee-paying independent school. The term grade school is sometimes used in the US though this term may refer to both primary education and secondary education. (source: Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Emigration_demography
+
+:Emigration_demography a owl:Class ;
+	rdfs:subClassOf :City_demographical_study .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Fire_hydrant
 
@@ -420,14 +458,7 @@ _:genid16 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gallery
 
 :Gallery a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Physical_built_domain_element> ;
-	rdfs:comment """S: (n) gallery (spectators at a golf or tennis match)
-S: (n) veranda, verandah, gallery (a porch along the outside of a building (sometimes partly enclosed))
-S: (n) gallery, art gallery, picture gallery (a room or series of rooms where works of art are exhibited)
-S: (n) gallery (a long usually narrow room used for some specific purpose) \"shooting gallery\"
-S: (n) gallery (a covered corridor (especially one extending along the wall of a building and supported with arches or columns))
-S: (n) gallery (narrow recessed balcony area along an upper floor on the interior of a building; usually marked by a colonnade)
-S: (n) drift, heading, gallery (a horizontal (or nearly horizontal) passageway in a mine) \"they dug a drift parallel with the vein\"""" .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Physical_built_domain_element> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas
 
@@ -502,6 +533,11 @@ S: (n) hospital (a medical institution where sick or injured people are given me
 :Hot_thermal_network a owl:Class ;
 	rdfs:subClassOf :Thermal_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#ISO_norm
+
+:ISO_norm a owl:Class ;
+	rdfs:subClassOf :Norm .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Island
 
 :Island a owl:Class ;
@@ -524,6 +560,11 @@ _:genid20 a owl:Restriction ;
 
 :Lighting_network a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Low_demography
+
+:Low_demography a owl:Class ;
+	rdfs:subClassOf :City_demographical_study .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Middle_school
 
@@ -561,6 +602,11 @@ _:genid21 a owl:Restriction ;
 :NUT_3 a owl:Class ;
 	rdfs:subClassOf :Nomenclature_of_Territorial_Units_for_Statistics .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Natural_language
+
+:Natural_language a owl:Class ;
+	rdfs:subClassOf schema:Language .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Network_basic_drawing
 
 :Network_basic_drawing a owl:Class ;
@@ -574,6 +620,11 @@ _:genid22 a owl:Restriction ;
 
 :Network_infrastructure_component a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#CityAnatomyThing> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#New_borns_demography
+
+:New_borns_demography a owl:Class ;
+	rdfs:subClassOf :City_demographical_study .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Noise
 
@@ -592,6 +643,16 @@ _:genid22 a owl:Restriction ;
 :Nomenclature_of_Territorial_Units_for_Statistics a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#CityAnatomyThing> , :Nomenclature ;
 	rdfs:comment "The Nomenclature of Territorial Units for Statistics or Nomenclature of Units for Territorial Statistics (NUTS; French: Nomenclature des unités territoriales statistiques) is a geocode standard for referencing the subdivisions of countries for statistical purposes.The standard is developed and regulated by the European Union, and thus only covers the member states of the EU in detail. The Nomenclature of Territorial Units for Statistics is instrumental in the European Union's Structural Fund delivery mechanisms. (source:Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Norm
+
+:Norm a owl:Class ;
+	rdfs:subClassOf schema:Intangible .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Omissions_demography
+
+:Omissions_demography a owl:Class ;
+	rdfs:subClassOf :City_demographical_study .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Optical_fiber_network
 
@@ -702,6 +763,12 @@ _:genid27 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Thoroughfare .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Rural_area
+
+:Rural_area a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> ;
+	rdfs:comment "a rural area or countryside is a geographic area that is located outside towns and cities.The Health Resources and Services Administration of the U.S. Department of Health and Human Services defines the word \"rural\" as encompassing \"...all population, housing, and territory not included within an urban area. Whatever is not urban is considered rural.\" (source: wikipedia)"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#School
 
 :School a owl:Class ;
@@ -720,6 +787,7 @@ _:genid27 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensor
 
 :Sensor a owl:Class ;
+	owl:equivalentClass seas:Sensor ;
 	rdfs:subClassOf :Sensors_network_component ;
 	rdfs:comment "A sensor is an object whose purpose is to detect events or changes in its environment and sends the information to the computer which then tells the actuator (output devices) to provide the corresponding output. A sensor is a device that converts real world data (Analog) into data that a computer can understand using ADC (Analog to Digital converter). (source: wikipedia)"@en .
 # 
@@ -972,6 +1040,12 @@ _:genid49 a owl:Restriction ;
 	rdfs:subClassOf :Educational_institution ;
 	rdfs:comment "A university (Latin: universitas, \"a whole\", \"a corporation\"[1]) is an institution of higher (or tertiary) education and research which grants academic degrees in various subjects. Universities typically provide undergraduate education and postgraduate education. (source: wikipedia)"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Urban_area
+
+:Urban_area a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> ;
+	rdfs:comment "An urban area is a human settlement with high population density and infrastructure of built environment. Urban areas are created through urbanization and are categorized by urban morphology as cities, towns, conurbations or suburbs. (source: wikipedia)"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Valve
 
 :Valve a owl:Class ;
@@ -1053,6 +1127,11 @@ schema:ImageObject a owl:Class ;
 schema:Intangible a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#SchemaOrgThing> .
 # 
+# https://schema.org/Language
+
+schema:Language a owl:Class ;
+	rdfs:subClassOf schema:Intangible .
+# 
 # https://schema.org/PostalAddress
 
 schema:PostalAddress a owl:Class ;
@@ -1066,6 +1145,11 @@ schema:Vehicle a owl:Class ;
 # https://w3id.org/seas/ElectricVehicle
 
 seas:ElectricVehicle a owl:Class ;
+	rdfs:subClassOf :SeasThing .
+# 
+# https://w3id.org/seas/Sensor
+
+seas:Sensor a owl:Class ;
 	rdfs:subClassOf :SeasThing .
 # 
 # 
