@@ -46,6 +46,10 @@
 :isPostalCodeOf a owl:ObjectProperty ;
 	rdfs:domain :Postal_code .
 # 
+# https://w3id.org/seas/isPropertyOf
+
+seas:isPropertyOf a owl:ObjectProperty .
+# 
 # 
 # 
 # #################################################################
@@ -98,6 +102,11 @@
 
 <http://www.biocenit.cat/ontologies/cao.owl#Water_distribution_network> rdfs:subClassOf :Water_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air
+
+:Air a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Environment> .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_Conditionning_network_component
 
 :Air_Conditionning_network_component a owl:Class ;
@@ -113,29 +122,98 @@ _:genid1 a owl:Restriction ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> ;
 	rdfs:comment "Is it the same as Thermal network ?"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality
+
+:Air_quality a owl:Class ;
+	rdfs:subClassOf seas:Property , _:genid2 .
+
+_:genid2 a owl:Restriction ;
+	owl:onProperty seas:isPropertyOf ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Air .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality_CO
+
+:Air_quality_CO a owl:Class ;
+	rdfs:subClassOf :Air_quality .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality_CO2
+
+:Air_quality_CO2 a owl:Class ;
+	rdfs:subClassOf :Air_quality .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality_NO2
+
+:Air_quality_NO2 a owl:Class ;
+	rdfs:subClassOf :Air_quality .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality_O3
+
+:Air_quality_O3 a owl:Class ;
+	rdfs:subClassOf :Air_quality .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality_PM10
+
+:Air_quality_PM10 a owl:Class ;
+	rdfs:subClassOf :Air_quality .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Air_quality_SO2
+
+:Air_quality_SO2 a owl:Class ;
+	rdfs:subClassOf :Air_quality .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Aircraft
+
+:Aircraft a owl:Class ;
+	rdfs:subClassOf schema:Vehicle ;
+	rdfs:comment "An aircraft is a machine that is able to fly by gaining support from the air. It counters the force of gravity by using either static lift or by using the dynamic lift of an airfoil,[1] or in a few cases the downward thrust from jet engines. (source : wikipedia)"@en ;
+	rdfs:label "Aircraft"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airline_network
 
 :Airline_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid2 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid3 .
 
-_:genid2 a owl:Restriction ;
+_:genid3 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Airline_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airline_network_component
 
 :Airline_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid3 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid4 .
 
-_:genid3 a owl:Restriction ;
+_:genid4 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Airline_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airplane
+
+:Airplane a owl:Class ;
+	rdfs:subClassOf :Fixed_wing_aircraft ;
+	rdfs:comment "An airplane or aeroplane (informally plane) is a powered, fixed-wing aircraft that is propelled forward by thrust from a jet engine or propeller. Airplanes come in a variety of sizes, shapes, and wing configurations. The broad spectrum of uses for airplanes includes recreation, transportation of goods and people, military, and research"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Airway
 
 :Airway a owl:Class ;
 	rdfs:subClassOf :Airline_network_component ;
 	rdfs:comment "An airway is a legally defined corridor that connects one specified location to another at a specified altitude, along which an aircraft that meets the requirements of the airway may be flown. Airways are defined with segments within a specific altitude block, corridor width, and between fixed geographic coordinates for satellite navigation systems, or between ground-based radio transmitter navigational aids (navaids) (such as VORs or NDBs) or the intersection of specific radials of two navaids. (source: wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Ambient_conditions_property
+
+:Ambient_conditions_property a owl:Class ;
+	rdfs:subClassOf seas:Property .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Anemometer
+
+:Anemometer a owl:Class ;
+	rdfs:subClassOf :Meter_network_component ;
+	rdfs:comment "An anemometer is a device used for measuring the speed of wind, and is also a common weather station instrument."@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Atmospheric_pressure_property
+
+:Atmospheric_pressure_property a owl:Class ;
+	rdfs:subClassOf seas:PressureProperty .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Autonomous_community
 
@@ -150,12 +228,58 @@ _:genid3 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Barcalona_tunnel
 
 :Barcalona_tunnel a owl:Class ;
-	rdfs:subClassOf :Tunnel .
+	owl:equivalentClass _:genid5 .
+
+_:genid5 owl:intersectionOf _:genid8 .
+
+_:genid8 a rdf:List ;
+	rdf:first :Tunnel ;
+	rdf:rest _:genid6 .
+
+_:genid6 a rdf:List ;
+	rdf:first _:genid46 .
+
+_:genid46 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
+	owl:hasValue <http://dbpedia.org/resource/Barcelona> .
+
+_:genid6 rdf:rest rdf:nil .
+
+_:genid5 a owl:Class .
+
+:Barcalona_tunnel rdfs:subClassOf :Tunnel , _:genid47 .
+
+_:genid47 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
+	owl:hasValue <http://dbpedia.org/resource/Barcelona> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Barcelona_postal_code
 
 :Barcelona_postal_code a owl:Class ;
-	rdfs:subClassOf :Spain_postal_code .
+	owl:equivalentClass _:genid9 .
+
+_:genid9 owl:intersectionOf _:genid12 .
+
+_:genid12 a rdf:List ;
+	rdf:first :Spain_postal_code ;
+	rdf:rest _:genid10 .
+
+_:genid10 a rdf:List ;
+	rdf:first _:genid49 .
+
+_:genid49 a owl:Restriction ;
+	owl:onProperty :isPostalCodeOf ;
+	owl:hasValue :Barcelona .
+
+_:genid10 rdf:rest rdf:nil .
+
+_:genid9 a owl:Class .
+
+:Barcelona_postal_code rdfs:subClassOf :Spain_postal_code , _:genid48 .
+
+_:genid48 a owl:Restriction ;
+	owl:onProperty :isPostalCodeOf ;
+	owl:hasValue :Barcelona .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Basic_drawing
 
@@ -173,10 +297,29 @@ _:genid3 a owl:Restriction ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> ;
 	rdfs:comment "A beach is a landform along a body of water. It usually consists of loose particles, which are often composed of rock, such as sand, gravel, shingle, pebbles, or cobblestones. The particles comprising a beach are occasionally biological in origin, such as mollusc shells or coralline algae.(source: wikipedia)"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bicycle
+
+:Bicycle a owl:Class ;
+	rdfs:subClassOf schema:Vehicle ;
+	rdfs:comment "A bicycle, often called a bike or cycle, is a human-powered, pedal-driven, single-track vehicle, having two wheels attached to a frame, one behind the other. A bicycle rider is called a cyclist, or bicyclist. (source:Wikipedia)"@en ;
+	rdfs:label "Bicycle"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bicycle_flow
+
+:Bicycle_flow a owl:Class ;
+	rdfs:subClassOf :Traffic_flow ;
+	rdfs:comment "Bycicle flow as refers bicycle moving, in the city."@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Big_neighborhood
 
 :Big_neighborhood a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Neighborhood> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Boat
+
+:Boat a owl:Class ;
+	rdfs:subClassOf :Watercraft ;
+	rdfs:comment "A boat is a watercraft of a large range of sizes designed to float, plane, work or travel on water. Small boats are typically found on inland waterways (e.g., rivers and lakes) or in protected coastal areas. (source: Wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Boulevard
 
@@ -185,85 +328,94 @@ _:genid3 a owl:Restriction ;
 	rdfs:comment """A boulevard (French, from Dutch: Bolwerk – bulwark, meaning bastion), often abbreviated Blvd, is a type of large road, usually running through a city.
 In modern American usage it often means a wide, multi-lane arterial thoroughfare, divided with a median down the centre, and perhaps with roadways along each side designed as slow travel and parking lanes and for bicycle and pedestrian usage, often with an above-average quality of landscaping and scenery. (source:Wikipedia)"""@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus
+
+:Bus a owl:Class ;
+	rdfs:subClassOf :Motor_vehicle ;
+	rdfs:comment "A bus (archaically also omnibus, multibus, motorbus, autobus) is a road vehicle designed to carry many passengers. (source : wikipedia)"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_lane
 
 :Bus_lane a owl:Class ;
-	rdfs:subClassOf :Bus_network_component , _:genid4 .
+	rdfs:subClassOf :Bus_network_component , _:genid13 .
 
-_:genid4 a owl:Restriction ;
+_:genid13 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Bus_routes_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_network
 
 :Bus_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid5 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid14 .
 
-_:genid5 a owl:Restriction ;
+_:genid14 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Bus_network_component .
-
-:Bus_network rdfs:subClassOf _:genid6 .
-
-_:genid6 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom _:genid7 .
-
-_:genid7 owl:intersectionOf _:genid9 .
-
-_:genid9 a rdf:List ;
-	rdf:first :Bus_routes_network ;
-	rdf:rest _:genid8 .
-
-_:genid8 a rdf:List ;
-	rdf:first :Bus_stops_network ;
-	rdf:rest rdf:nil .
-
-_:genid7 a owl:Class .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_network_component
 
 :Bus_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid10 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid15 .
 
-_:genid10 a owl:Restriction ;
+_:genid15 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Bus_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_routes_network
 
 :Bus_routes_network a owl:Class ;
-	rdfs:subClassOf :Bus_network , _:genid11 .
-
-_:genid11 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom :Bus_network .
-
-:Bus_routes_network owl:disjointWith :Bus_stops_network .
+	rdfs:subClassOf :Bus_network ;
+	owl:disjointWith :Bus_stops_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_stop
 
 :Bus_stop a owl:Class ;
-	rdfs:subClassOf :Bus_network_component , _:genid12 .
+	rdfs:subClassOf :Bus_network_component , _:genid16 .
 
-_:genid12 a owl:Restriction ;
+_:genid16 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Bus_stops_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Bus_stops_network
 
 :Bus_stops_network a owl:Class ;
-	rdfs:subClassOf :Bus_network , _:genid13 .
+	rdfs:subClassOf :Bus_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Car
 
-_:genid13 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom :Bus_network .
+:Car a owl:Class ;
+	rdfs:subClassOf :Motor_vehicle ;
+	rdfs:comment "A car, automobile, or auto is a wheeled, self-powered motor vehicle used for transportation and a product of the automotive industry. Most definitions of the term specify that cars are designed to run primarily on roads, to have seating for one to eight people, to typically have four wheels with tyres, and to be constructed principally for the transport of people rather than goods. (source:wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Catalonia_municipality
 
 :Catalonia_municipality a owl:Class ;
-	rdfs:subClassOf :Municipality ;
-	rdfs:comment """Catalonia is (as of 2015) divided into 948 municipalities.
+	owl:equivalentClass _:genid17 .
+
+_:genid17 owl:intersectionOf _:genid20 .
+
+_:genid20 a rdf:List ;
+	rdf:first :Municipality ;
+	rdf:rest _:genid18 .
+
+_:genid18 a rdf:List ;
+	rdf:first _:genid50 .
+
+_:genid50 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
+	owl:hasValue :Catalonia .
+
+_:genid18 rdf:rest rdf:nil .
+
+_:genid17 a owl:Class .
+
+:Catalonia_municipality rdfs:subClassOf :Municipality , _:genid51 .
+
+_:genid51 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
+	owl:hasValue :Catalonia .
+
+:Catalonia_municipality rdfs:comment """Catalonia is (as of 2015) divided into 948 municipalities.
 Each municipality typically represents one significant urban settlement, of any size from village to city, with its surrounding land. This is not always the case, though. Many municipalities have merged as a result of rural depopulation or simply for greater efficiency. Some large urban areas, for example Barcelona, consist of more than one municipality, each of which previously held a separate settlement. The Catalan government encourages mergers of very small municipalities; its \"Report on the revision of Catalonia's territorial organisation model\" (the \"Roca Report (ca)\"), published in 2000 but not yet implemented, recommends many such mergers."""@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Census_population_organization
@@ -295,26 +447,17 @@ In central air conditioning, the inside heat-exchanger is typically placed insid
 :Change_residence_demography a owl:Class ;
 	rdfs:subClassOf :City_demographical_study .
 # 
-# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Charging_station
-
-:Charging_station a owl:Class ;
-	rdfs:subClassOf :Charging_station_network_component .
-# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Charging_station_network
 
 :Charging_station_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid14 .
-
-_:genid14 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
-	owl:someValuesFrom :Charging_station .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Charging_station_network_component
 
 :Charging_station_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid15 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid21 .
 
-_:genid15 a owl:Restriction ;
+_:genid21 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Charging_station_network .
 # 
@@ -395,6 +538,25 @@ _:genid15 a owl:Restriction ;
 :Density_office a owl:Class ;
 	rdfs:subClassOf <http://ontology.eil.utoronto.ca/organization.owl#GovernmentOrganization> .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Device_network_component
+
+:Device_network_component a owl:Class ;
+	rdfs:subClassOf :Network_infrastructure_component , _:genid22 .
+
+_:genid22 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+	owl:someValuesFrom :Devices_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Devices_network
+
+:Devices_network a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Direction_property
+
+:Direction_property a owl:Class ;
+	rdfs:subClassOf seas:Property .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Drinking_fountain
 
 :Drinking_fountain a owl:Class ;
@@ -405,12 +567,28 @@ _:genid15 a owl:Restriction ;
 :Educational_institution a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Physical_built_domain_element> .
 # 
-# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Electric_Vehicle
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Electric_car
 
-:Electric_Vehicle a owl:Class ;
+:Electric_car a owl:Class ;
 	owl:equivalentClass seas:ElectricVehicle ;
+	rdfs:subClassOf :Car , :Electric_vehicle .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Electric_vehicle
+
+:Electric_vehicle a owl:Class ;
 	rdfs:subClassOf schema:Vehicle ;
-	rdfs:comment "electric vehicle, electric automobile, electric car (a car that is powered by electricity). ( source: wordnet)"@en .
+	rdfs:comment "An electric vehicle (EV), also referred to as an electric drive vehicle, uses one or more electric motors or traction motors for propulsion. An electric vehicle may be powered through a collector system by electricity from off-vehicle sources, or may be self-contained with a battery, solar panels or a generator to convert fuel to electricity.[1] EVs include road and rail vehicles, surface and underwater vessels, electric aircraft and electric spacecraft. (source: wikipedia)"@en , "electric vehicle, electric automobile, electric car (a car that is powered by electricity). ( source: wordnet)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Electric_vehicle_charging_station
+
+:Electric_vehicle_charging_station a owl:Class ;
+	owl:equivalentClass seas:ElectricVehicleChargingStation ;
+	rdfs:subClassOf :Charging_station_network_component .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Electricity_meter
+
+:Electricity_meter a owl:Class ;
+	rdfs:subClassOf :Meter_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Elementary_school
 
@@ -423,16 +601,39 @@ _:genid15 a owl:Restriction ;
 :Emigration_demography a owl:Class ;
 	rdfs:subClassOf :City_demographical_study .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Environmental_noise
+
+:Environmental_noise a owl:Class ;
+	rdfs:subClassOf :Noise ;
+	rdfs:comment "Environmental noise is the summary of noise pollution from outside, caused by transport, industrial and recreational activities (source: Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#External_ambient_conditions_property
+
+:External_ambient_conditions_property a owl:Class ;
+	rdfs:subClassOf :Ambient_conditions_property .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Fire_hydrant
 
 :Fire_hydrant a owl:Class ;
 	rdfs:subClassOf :Water_network_component .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Fixed_wing_aircraft
+
+:Fixed_wing_aircraft a owl:Class ;
+	rdfs:subClassOf :Aircraft ;
+	owl:disjointWith :Rotary_wing_aircraft ;
+	rdfs:comment "A fixed-wing aircraft is an aircraft, such as an aeroplane, which is capable of flight using wings that generate lift caused by the vehicle's forward airspeed and the shape of the wings."@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Flooding_zone
 
 :Flooding_zone a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> ;
 	rdfs:comment "A flooding zone , is a delimited geographical area that has been covered by water during a flood.  The  flooding zone are linked to two categories of phenomena: natural flooding and flooding due to human activities."@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Flow_meter
+
+:Flow_meter a owl:Class ;
+	rdfs:subClassOf :Meter_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Fountain
 
@@ -449,9 +650,9 @@ _:genid15 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Fuel_network
 
 :Fuel_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid16 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid23 .
 
-_:genid16 a owl:Restriction ;
+_:genid23 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom :Fuel .
 # 
@@ -475,27 +676,32 @@ _:genid16 a owl:Restriction ;
 :Gas_distribution_network a owl:Class ;
 	rdfs:subClassOf :Gas_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas_meter
+
+:Gas_meter a owl:Class ;
+	rdfs:subClassOf :Meter_network_component .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas_network
 
 :Gas_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid17 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid24 .
 
-_:genid17 a owl:Restriction ;
+_:genid24 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Gas_Tank .
 
-:Gas_network rdfs:subClassOf _:genid18 .
+:Gas_network rdfs:subClassOf _:genid25 .
 
-_:genid18 a owl:Restriction ;
+_:genid25 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom :Gas .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Gas_network_component
 
 :Gas_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid19 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid26 .
 
-_:genid19 a owl:Restriction ;
+_:genid26 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Gas_network .
 # 
@@ -503,6 +709,12 @@ _:genid19 a owl:Restriction ;
 
 :Gas_supplying_network a owl:Class ;
 	rdfs:subClassOf :Gas_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Glass_waste_container
+
+:Glass_waste_container a owl:Class ;
+	rdfs:subClassOf :Waste_container ;
+	rdfs:comment "Glass waste container is a waste container for glass waste"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Healtcare_institution
 
@@ -513,6 +725,12 @@ _:genid19 a owl:Restriction ;
 
 :Healthcare_center a owl:Class ;
 	rdfs:subClassOf :Healtcare_institution .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Helicopter
+
+:Helicopter a owl:Class ;
+	rdfs:subClassOf :Rotary_wing_aircraft ;
+	rdfs:comment "A helicopter is a type of rotorcraft in which lift and thrust are supplied by rotors. This allows the helicopter to take off and land vertically, to hover, and to fly forward, backward, and laterally. These attributes allow helicopters to be used in congested or isolated areas. (source: Wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#High_school
 
@@ -533,10 +751,20 @@ S: (n) hospital (a medical institution where sick or injured people are given me
 :Hot_thermal_network a owl:Class ;
 	rdfs:subClassOf :Thermal_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Humidity_sensor
+
+:Humidity_sensor a owl:Class ;
+	rdfs:subClassOf :Sensor .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#ISO_norm
 
 :ISO_norm a owl:Class ;
 	rdfs:subClassOf :Norm .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Internal_ambient_conditions_property
+
+:Internal_ambient_conditions_property a owl:Class ;
+	rdfs:subClassOf :Ambient_conditions_property .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Island
 
@@ -548,9 +776,9 @@ S: (n) island (a zone or area resembling an island) (source: wordnet)"""@en .
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Islands_group
 
 :Islands_group a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> , _:genid20 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Generic_built_domain_element> , _:genid27 .
 
-_:genid20 a owl:Restriction ;
+_:genid27 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Island .
 
@@ -561,15 +789,52 @@ _:genid20 a owl:Restriction ;
 :Lighting_network a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Lighting_network_component
+
+:Lighting_network_component a owl:Class ;
+	rdfs:subClassOf :Network_infrastructure_component .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Low_demography
 
 :Low_demography a owl:Class ;
 	rdfs:subClassOf :City_demographical_study .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Meter_network_component
+
+:Meter_network_component a owl:Class ;
+	rdfs:subClassOf :Device_network_component , _:genid28 .
+
+_:genid28 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+	owl:someValuesFrom :Meters_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Meters_network
+
+:Meters_network a owl:Class ;
+	rdfs:subClassOf :Devices_network .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Middle_school
 
 :Middle_school a owl:Class ;
 	rdfs:subClassOf :School .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Military_hospital
+
+:Military_hospital a owl:Class ;
+	rdfs:subClassOf :Hospital ;
+	rdfs:comment "A military hospital is a hospital that is reserved for the use of military personnel, their dependents and other authorized users. They may or may not be located on a military base; many are not. (Source: Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Motor_vehicle
+
+:Motor_vehicle a owl:Class ;
+	rdfs:subClassOf schema:Vehicle ;
+	rdfs:comment "A motor vehicle is a self-propelled road vehicle and off-road vehicle, commonly wheeled, that does not operate on rails, such as trains or trams and used for commercial purposes on the highways in the transportation of passengers, or passengers and property. (source: wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Motorcycle
+
+:Motorcycle a owl:Class ;
+	rdfs:subClassOf :Motor_vehicle ;
+	rdfs:comment "A motorcycle (also called a motorbike, bike, or cycle) is a two-[1][2] or three-wheeled[3][4] motor vehicle"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Municipal_wireless_network
 
@@ -579,13 +844,8 @@ _:genid20 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Municipality
 
 :Municipality a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid21 .
-
-_:genid21 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
-	owl:hasValue :Catalonia .
-
-:Municipality rdfs:comment "A municipality is usually a single urban administrative division having corporate status and powers of self-government or jurisdiction as granted by national and state laws, to which it is subordinate. It is to be distinguished from the county, which may encompass rural territory and/or numerous small communities such as towns, villages and hamlets. The term municipality may also mean the governing or ruling body of a given municipality. A municipality is a general-purpose administrative subdivision, as opposed to a special-purpose district. The term is derived from French \"municipalité\" and Latin \"municipalis\". (source:Wikipedia)"@en .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> ;
+	rdfs:comment "A municipality is usually a single urban administrative division having corporate status and powers of self-government or jurisdiction as granted by national and state laws, to which it is subordinate. It is to be distinguished from the county, which may encompass rural territory and/or numerous small communities such as towns, villages and hamlets. The term municipality may also mean the governing or ruling body of a given municipality. A municipality is a general-purpose administrative subdivision, as opposed to a special-purpose district. The term is derived from French \"municipalité\" and Latin \"municipalis\". (source:Wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#NUT_1
 
@@ -610,9 +870,9 @@ _:genid21 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Network_basic_drawing
 
 :Network_basic_drawing a owl:Class ;
-	rdfs:subClassOf :Basic_drawing , _:genid22 .
+	rdfs:subClassOf :Basic_drawing , _:genid29 .
 
-_:genid22 a owl:Restriction ;
+_:genid29 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
 # 
@@ -629,8 +889,18 @@ _:genid22 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Noise
 
 :Noise a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#MeasurableThing> ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Environment> ;
 	rdfs:comment "Noise is unwanted sound judged to be unpleasant, loud or disruptive to hearing. From a physics standpoint, noise is indistinguishable from sound, as both are vibrations through a medium, such as air or water. The difference arises when the brain receives and perceives a sound. (source: wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Noise_level
+
+:Noise_level a owl:Class ;
+	rdfs:subClassOf seas:Property , _:genid30 .
+
+_:genid30 a owl:Restriction ;
+	owl:onProperty seas:isPropertyOf ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Noise .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Nomenclature
 
@@ -659,15 +929,46 @@ _:genid22 a owl:Restriction ;
 :Optical_fiber_network a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
 # 
-# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Parking
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Organic_waste_container
 
-:Parking a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Physical_built_domain_element> .
+:Organic_waste_container a owl:Class ;
+	rdfs:subClassOf :Waste_container ;
+	rdfs:comment "Organic waste container is a waste container for organic waste"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Paper_waste_container
+
+:Paper_waste_container a owl:Class ;
+	rdfs:subClassOf :Waste_container ;
+	rdfs:comment "Paper waste container is a waste container for paper waste"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Parking_lot
+
+:Parking_lot a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Physical_built_domain_element> ;
+	rdfs:comment "A parking lot (Australian and British English: car park), also known as a car lot, is a cleared area that is intended for parking vehicles. Usually, the term refers to a dedicated area that has been provided with a durable or semi-durable surface. (source: wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Passageway
 
 :Passageway a owl:Class ;
 	rdfs:subClassOf :Thoroughfare .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#People_flow
+
+:People_flow a owl:Class ;
+	rdfs:subClassOf :Traffic_flow ;
+	rdfs:comment "People flow as refers to numerous people moving, around buildings, around cities or across borders. (source: wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Plastic_waste_container
+
+:Plastic_waste_container a owl:Class ;
+	rdfs:subClassOf :Waste_container ;
+	rdfs:comment "Plastic waste container is a waste container for plastic waste"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Pluviometer
+
+:Pluviometer a owl:Class ;
+	rdfs:subClassOf :Meter_network_component ;
+	rdfs:comment "A rain gauge (also known as an udometer, pluviometer, or an ombrometer) is an instrument used by meteorologists and hydrologists to gather and measure the amount of liquid precipitation over a set period of time. (source:wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Police_station
 
@@ -689,9 +990,9 @@ _:genid22 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Power_network_component
 
 :Power_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid23 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid31 .
 
-_:genid23 a owl:Restriction ;
+_:genid31 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Power_network .
 # 
@@ -715,38 +1016,63 @@ _:genid23 a owl:Restriction ;
 :Power_transporting_network a owl:Class ;
 	rdfs:subClassOf :Power_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Private_university
+
+:Private_university a owl:Class ;
+	rdfs:subClassOf :University ;
+	rdfs:comment "Private universities are not operated by governments, although many receive tax breaks, public student loans, and grants. Depending on their location, private universities may be subject to government regulation. This is in contrast to public universities and national universities. Most private universities are non-profit organizations. (Source: Wikipedia)"@en ;
+	rdfs:label "Private university"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Province
 
 :Province a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> ;
 	rdfs:comment "A province is almost always an administrative division, within a country or state. The term derives from the ancient Roman provincia, which was the major territorial and administrative unit of the Roman Empire's territorial possessions outside Italy. The term province has since been adopted by many countries, and in those with no actual provinces, it has come to mean \"outside the capital city\". While some provinces were produced artificially by colonial powers, others were formed around local groups with their own ethnic identities. Many have their own powers independent of federal authority, especially in Canada. In other countries, like China, provinces are the creation of central government, with very little autonomy. (source:Wikipedia)"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Public_university
+
+:Public_university a owl:Class ;
+	rdfs:subClassOf :University ;
+	rdfs:comment "A public university is a university that is predominantly funded by public means through a national or subnational government, as opposed to private universities. (source: Wikipedia)"@en ;
+	rdfs:label "Public university"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railed_vehicle
+
+:Railed_vehicle a owl:Class ;
+	rdfs:subClassOf schema:Vehicle ;
+	rdfs:comment "Rail transport is a means of conveyance of passengers and goods on wheeled vehicles running on rails, also known as tracks. It is also commonly referred to as train transport. In contrast to road transport, where vehicles run on a prepared flat surface, rail vehicles (rolling stock) are directionally guided by the tracks on which they run.  (source: Wikipedia)"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railway_network
 
 :Railway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid24 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid32 .
 
-_:genid24 a owl:Restriction ;
+_:genid32 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Railway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railway_network_component
 
 :Railway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid25 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid33 .
 
-_:genid25 a owl:Restriction ;
+_:genid33 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Railway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railways_routes_network
 
 :Railways_routes_network a owl:Class ;
-	rdfs:subClassOf :Railway_network , _:genid26 .
+	rdfs:subClassOf :Railway_network , _:genid34 .
 
-_:genid26 a owl:Restriction ;
+_:genid34 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Railway_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Refuse_waste_container
+
+:Refuse_waste_container a owl:Class ;
+	rdfs:subClassOf :Waste_container .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Region
 
@@ -757,11 +1083,17 @@ _:genid26 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Road_network
 
 :Road_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid27 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid35 .
 
-_:genid27 a owl:Restriction ;
+_:genid35 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Thoroughfare .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Rotary_wing_aircraft
+
+:Rotary_wing_aircraft a owl:Class ;
+	rdfs:subClassOf :Aircraft ;
+	rdfs:comment "A rotorcraft or rotary-wing aircraft[1] is a heavier-than-air flying machine that uses lift generated by wings, called rotary wings or rotor blades, that revolve around a mast. (source:wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Rural_area
 
@@ -774,6 +1106,12 @@ _:genid27 a owl:Restriction ;
 :School a owl:Class ;
 	rdfs:subClassOf :Educational_institution ;
 	rdfs:comment "A school is an institution designed to provide learning spaces and learning environments for the teaching of students (or \"pupils\") under the direction of teachers. Most countries have systems of formal education, which is commonly compulsory.[citation needed] In these systems, students progress through a series of schools. The names for these schools vary by country (discussed in the Regional section below) but generally include primary school for young children and secondary school for teenagers who have completed primary education. An institution where higher education is taught, is commonly called a university college or university. (source:Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Seaplane
+
+:Seaplane a owl:Class ;
+	rdfs:subClassOf :Fixed_wing_aircraft ;
+	rdfs:comment "A seaplane is a powered fixed-wing aircraft capable of taking off and landing (alighting) on water. (source: wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#SeasThing
 
@@ -794,18 +1132,18 @@ _:genid27 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensors_network
 
 :Sensors_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid28 .
+	rdfs:subClassOf :Devices_network , _:genid36 .
 
-_:genid28 a owl:Restriction ;
+_:genid36 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Sensor .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensors_network_component
 
 :Sensors_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid29 .
+	rdfs:subClassOf :Device_network_component , _:genid37 .
 
-_:genid29 a owl:Restriction ;
+_:genid37 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Sensors_network .
 # 
@@ -823,22 +1161,85 @@ _:genid29 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sewer_network_component
 
 :Sewer_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid30 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid38 .
 
-_:genid30 a owl:Restriction ;
+_:genid38 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Sewer_network> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Ship
+
+:Ship a owl:Class ;
+	rdfs:subClassOf :Watercraft ;
+	rdfs:comment "A ship is a large watercraft that travels the world's oceans and other sufficiently deep waterways, carrying passengers or goods, or in support of specialized missions, such as defense, research and fishing. Historically, a \"ship\" was a sailing vessel with at least three square-rigged masts and a full bowsprit. Ships are generally distinguished from boats, based on size, shape and load capacity. (source:Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Solar_thermal_jnstallation
+
+:Solar_thermal_jnstallation a owl:Class ;
+	rdfs:subClassOf :Thermal_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Spain_autonomous_community
 
 :Spain_autonomous_community a owl:Class ;
-	rdfs:subClassOf :Autonomous_community ;
-	rdfs:comment "In Spain, an autonomus community (Spanish: comunidad autónoma, Basque: autonomia erkidegoa, Catalan: comunitat autònoma, Galician: comunidade autónoma)[a] is a first-level political and administrative division, created in accordance with the Spanish constitution of 1978, with the aim of guaranteeing limited autonomy of the nationalities and regions that comprise Spain.(source: Wikipedia)"@en .
+	owl:equivalentClass _:genid39 .
+
+_:genid39 owl:intersectionOf _:genid42 .
+
+_:genid42 a rdf:List ;
+	rdf:first :Autonomous_community ;
+	rdf:rest _:genid40 .
+
+_:genid40 a rdf:List ;
+	rdf:first _:genid41 .
+
+_:genid41 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
+	owl:hasValue :Spain .
+
+_:genid40 rdf:rest rdf:nil .
+
+_:genid39 a owl:Class .
+
+:Spain_autonomous_community rdfs:subClassOf :Autonomous_community , _:genid43 .
+
+_:genid43 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
+	owl:hasValue <http://dbpedia.org/resource/Spain> .
+
+:Spain_autonomous_community rdfs:comment "In Spain, an autonomus community (Spanish: comunidad autónoma, Basque: autonomia erkidegoa, Catalan: comunitat autònoma, Galician: comunidade autónoma)[a] is a first-level political and administrative division, created in accordance with the Spanish constitution of 1978, with the aim of guaranteeing limited autonomy of the nationalities and regions that comprise Spain.(source: Wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Spain_postal_code
 
 :Spain_postal_code a owl:Class ;
-	rdfs:subClassOf :Postal_code .
+	owl:equivalentClass _:genid44 .
+
+_:genid44 owl:intersectionOf _:genid47 .
+
+_:genid47 a rdf:List ;
+	rdf:first :Postal_code ;
+	rdf:rest _:genid45 .
+
+_:genid45 a rdf:List ;
+	rdf:first _:genid52 .
+
+_:genid52 a owl:Restriction ;
+	owl:onProperty :isPostalCodeOf ;
+	owl:hasValue :Spain .
+
+_:genid45 rdf:rest rdf:nil .
+
+_:genid44 a owl:Class .
+
+:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid53 .
+
+_:genid53 a owl:Restriction ;
+	owl:onProperty :isPostalCodeOf ;
+	owl:hasValue :Spain .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#SpeedProperty
+
+:SpeedProperty a owl:Class ;
+	rdfs:subClassOf seas:Property .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Statistical_section
 
@@ -850,51 +1251,31 @@ _:genid30 a owl:Restriction ;
 :Street a owl:Class ;
 	rdfs:subClassOf :Thoroughfare .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Streetligths_electrical_panel
+
+:Streetligths_electrical_panel a owl:Class ;
+	rdfs:subClassOf :Lighting_network_component .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_lines_network
 
 :Subway_lines_network a owl:Class ;
-	rdfs:subClassOf :Subway_network , _:genid31 .
-
-_:genid31 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom :Subway_network .
-
-:Subway_lines_network owl:disjointWith :Subway_stations_network .
+	rdfs:subClassOf :Subway_network ;
+	owl:disjointWith :Subway_stations_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_network
 
 :Subway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid32 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid48 .
 
-_:genid32 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
+_:genid48 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Subway_network_component .
-
-:Subway_network rdfs:subClassOf _:genid33 .
-
-_:genid33 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom _:genid34 .
-
-_:genid34 owl:intersectionOf _:genid36 .
-
-_:genid36 a rdf:List ;
-	rdf:first :Subway_lines_network ;
-	rdf:rest _:genid35 .
-
-_:genid35 a rdf:List ;
-	rdf:first :Subway_stations_network ;
-	rdf:rest rdf:nil .
-
-_:genid34 a owl:Class .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_network_component
 
 :Subway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid37 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid49 .
 
-_:genid37 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+_:genid49 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Subway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_station
@@ -906,16 +1287,23 @@ _:genid37 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_stations_network
 
 :Subway_stations_network a owl:Class ;
-	rdfs:subClassOf :Subway_network , _:genid38 .
+	rdfs:subClassOf :Subway_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Teaching_hospital
 
-_:genid38 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
-	owl:someValuesFrom :Subway_network .
+:Teaching_hospital a owl:Class ;
+	rdfs:subClassOf :Hospital ;
+	rdfs:comment "A teaching hospital is a hospital or medical center that provides clinical education and training to future and current health professionals. Teaching hospitals are often affiliated with medical schools and work closely with medical students throughout their period of matriculation, and especially during their clerkship (internship) years. (source: Wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Thermal_network
 
 :Thermal_network a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Thermal_network_component
+
+:Thermal_network_component a owl:Class ;
+	rdfs:subClassOf :Network_infrastructure_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Thoroughfare
 
@@ -923,68 +1311,77 @@ _:genid38 a owl:Restriction ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> ;
 	rdfs:comment "A thoroughfare is a transportation route connecting one location to another.[1] On land a thoroughfare may refer to anything from a multi-lane highway with grade separated junctions, to a rough trail.[citation needed] Thoroughfares used by a variety of traffic, such as cars on roads and highways. On water a thoroughfare may refer to a strait, channel or waterway. The term may also refer to access to a route, distinct from the route itself. In other words thoroughfare may refer to the legal right to use a particular way. (source:Wikipedia)"@en .
 # 
-# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Traffic
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Traffic_flow
 
-:Traffic a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Man_made_flow> .
+:Traffic_flow a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Man_made_flow> ;
+	rdfs:comment "In mathematics and civil engineering, traffic flow is the study of interactions between travellers (including pedestrians, cyclists, drivers and their vehicles) and infrastructure (including highways, signage, and traffic control devices), with the aim of understanding and developing an optimal transport network with efficient movement of traffic and minimal traffic congestion problems. (source: Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train
+
+:Train a owl:Class ;
+	rdfs:subClassOf :Railed_vehicle ;
+	rdfs:comment "A train is a form of rail transport consisting of a series of vehicles that usually runs along a rail track to transport cargo or passengers. (source: wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_station
 
 :Train_station a owl:Class ;
-	rdfs:subClassOf :Railway_network_component , _:genid39 .
+	rdfs:subClassOf :Railway_network_component , _:genid50 .
 
-_:genid39 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+_:genid50 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Railway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_stations_network
 
 :Train_stations_network a owl:Class ;
-	rdfs:subClassOf :Railway_network , _:genid40 .
+	rdfs:subClassOf :Railway_network , _:genid51 .
 
-_:genid40 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
+_:genid51 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Railway_network .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tram
+
+:Tram a owl:Class ;
+	rdfs:subClassOf :Railed_vehicle ;
+	rdfs:comment "tram (also known as tramcar; and in North America known as streetcar, trolley or trolley car) is a rail vehicle which runs on tracks along public urban streets, and also sometimes on a segregated right of way.[1] The lines or networks operated by tramcars are called tramways. (source: wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway
 
 :Tramway a owl:Class ;
-	rdfs:subClassOf :Tramway_network_component , _:genid41 .
+	rdfs:subClassOf :Tramway_network_component , _:genid52 .
 
-_:genid41 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+_:genid52 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_network
 
 :Tramway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid42 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid53 .
 
-_:genid42 a owl:Restriction ;
-	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
+_:genid53 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_network_component
 
 :Tramway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid43 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid54 .
 
-_:genid43 a owl:Restriction ;
+_:genid54 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_routes_network
 
 :Tramway_routes_network a owl:Class ;
-	rdfs:subClassOf :Tramway_network , _:genid44 .
+	rdfs:subClassOf :Tramway_network , _:genid55 .
 
-_:genid44 a owl:Restriction ;
+_:genid55 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway .
 
-:Tramway_routes_network rdfs:subClassOf _:genid45 .
+:Tramway_routes_network rdfs:subClassOf _:genid56 .
 
-_:genid45 a owl:Restriction ;
+_:genid56 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 
@@ -993,31 +1390,37 @@ _:genid45 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_stop
 
 :Tramway_stop a owl:Class ;
-	rdfs:subClassOf :Tramway_network_component , _:genid46 .
+	rdfs:subClassOf :Tramway_network_component , _:genid57 .
 
-_:genid46 a owl:Restriction ;
+_:genid57 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_stops_nework
 
 :Tramway_stops_nework a owl:Class ;
-	rdfs:subClassOf :Tramway_network , _:genid47 .
+	rdfs:subClassOf :Tramway_network , _:genid58 .
 
-_:genid47 a owl:Restriction ;
+_:genid58 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway_stop .
 
-:Tramway_stops_nework rdfs:subClassOf _:genid48 .
+:Tramway_stops_nework rdfs:subClassOf _:genid59 .
 
-_:genid48 a owl:Restriction ;
+_:genid59 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_traffic
 
 :Tramway_traffic a owl:Class ;
-	rdfs:subClassOf :Traffic .
+	rdfs:subClassOf :Traffic_flow .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Truck
+
+:Truck a owl:Class ;
+	rdfs:subClassOf :Motor_vehicle ;
+	rdfs:comment "A truck (United States, Canada, Australia, New Zealand, Puerto Rico and Pakistan; also called a lorry in the United Kingdom, Ireland, South Africa, Malaysia, Singapore, and India) is a motor vehicle designed to transport cargo. (source: wikipedia)"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tunnel
 
@@ -1028,9 +1431,9 @@ _:genid48 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tunnel_network
 
 :Tunnel_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid49 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid60 .
 
-_:genid49 a owl:Restriction ;
+_:genid60 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tunnel .
 # 
@@ -1052,21 +1455,32 @@ _:genid49 a owl:Restriction ;
 	rdfs:subClassOf :Water_network_component ;
 	rdfs:comment "A valve is a device that regulates, directs or controls the flow of a fluid (gases, liquids, fluidized solids, or slurries) by opening, closing, or partially obstructing various passageways. Valves are technically fittings, but are usually discussed as a separate category. In an open valve, fluid flows in a direction from higher pressure to lower pressure. The word is derived from the Latin valva, the moving part of a door, in turn from volvere, to turn, roll. (source:wikipedia)"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Waste_container
+
+:Waste_container a owl:Class ;
+	rdfs:subClassOf :Sewer_network_component ;
+	rdfs:comment "A waste container is a container for temporarily storing waste, and is usually made out of metal or plastic. (source : wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_meter
+
+:Water_meter a owl:Class ;
+	rdfs:subClassOf :Meter_network_component .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_network
 
 :Water_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid50 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid61 .
 
-_:genid50 a owl:Restriction ;
+_:genid61 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Water> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_network_component
 
 :Water_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid51 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid62 .
 
-_:genid51 a owl:Restriction ;
+_:genid62 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Water_network .
 # 
@@ -1086,12 +1500,85 @@ _:genid51 a owl:Restriction ;
 :Water_transporting_network a owl:Class ;
 	rdfs:subClassOf :Water_network .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Watercraft
+
+:Watercraft a owl:Class ;
+	rdfs:subClassOf schema:Vehicle ;
+	rdfs:comment "Watercraft are water-borne vehicles including ships, boats, hovercraft and submarines. Watercraft usually have propulsive capability (whether by sail, oar or engine) and hence are distinct from a simple device that merely floats, such as a log raft. (source: Wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Weather
+
+:Weather a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Environment> .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wind
+
+:Wind a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Natural_flow> ;
+	rdfs:comment "Wind is the flow of gases on a large scale.  In meteorology, winds are often referred to according to their strength, and the direction from which the wind is blowing. (source:wikipedia)"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wind_direction_property
+
+:Wind_direction_property a owl:Class ;
+	owl:equivalentClass _:genid63 .
+
+_:genid63 owl:intersectionOf _:genid66 .
+
+_:genid66 a rdf:List ;
+	rdf:first :Direction_property ;
+	rdf:rest _:genid64 .
+
+_:genid64 a rdf:List ;
+	rdf:first _:genid54 .
+
+_:genid54 owl:onProperty seas:isPropertyOf ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Wind .
+
+_:genid64 rdf:rest rdf:nil .
+
+_:genid63 a owl:Class .
+
+:Wind_direction_property rdfs:subClassOf :Direction_property , _:genid55 .
+
+_:genid55 owl:onProperty seas:isPropertyOf ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Wind .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wind_speed_property
+
+:Wind_speed_property a owl:Class ;
+	owl:equivalentClass _:genid67 .
+
+_:genid67 owl:intersectionOf _:genid70 .
+
+_:genid70 a rdf:List ;
+	rdf:first :SpeedProperty ;
+	rdf:rest _:genid68 .
+
+_:genid68 a rdf:List ;
+	rdf:first _:genid56 .
+
+_:genid56 owl:onProperty seas:isPropertyOf ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Wind .
+
+_:genid68 rdf:rest rdf:nil .
+
+_:genid67 a owl:Class .
+
+:Wind_speed_property rdfs:subClassOf :SpeedProperty , _:genid57 .
+
+_:genid57 owl:onProperty seas:isPropertyOf ;
+	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+	owl:onClass :Wind .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wireless_network
 
 :Wireless_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Data_communication_network> , _:genid52 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Data_communication_network> , _:genid71 .
 
-_:genid52 a owl:Restriction ;
+_:genid71 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Wirelss_point .
 
@@ -1101,9 +1588,9 @@ Wireless networking is a method by which homes, telecommunications networks and 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wireless_network_component
 
 :Wireless_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid53 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid72 .
 
-_:genid53 a owl:Restriction ;
+_:genid72 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Wireless_network .
 # 
@@ -1140,17 +1627,58 @@ schema:PostalAddress a owl:Class ;
 # https://schema.org/Vehicle
 
 schema:Vehicle a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#SchemaOrgThing> .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#SchemaOrgThing> ;
+	rdfs:comment "A vehicle (from Latin: vehiculum[1]) is a mobile machine that transports people or cargo. Typical vehicles include wagons, bicycles, motor vehicles (motorcycles, cars, trucks, buses), railed vehicles (trains, trams), watercraft (ships, boats), aircraft and spacecraf. (source: wikipedia)"@en .
+# 
+# https://w3id.org/seas/Battery
+
+seas:Battery a owl:Class ;
+	rdfs:subClassOf :SeasThing .
 # 
 # https://w3id.org/seas/ElectricVehicle
 
 seas:ElectricVehicle a owl:Class ;
 	rdfs:subClassOf :SeasThing .
 # 
+# https://w3id.org/seas/ElectricVehicleChargingStation
+
+seas:ElectricVehicleChargingStation a owl:Class ;
+	rdfs:subClassOf :SeasThing .
+# 
+# https://w3id.org/seas/FrequencyProperty
+
+seas:FrequencyProperty a owl:Class ;
+	rdfs:subClassOf seas:Property .
+# 
+# https://w3id.org/seas/HumidityProperty
+
+seas:HumidityProperty a owl:Class ;
+	rdfs:subClassOf seas:Property .
+# 
+# https://w3id.org/seas/PressureProperty
+
+seas:PressureProperty a owl:Class ;
+	rdfs:subClassOf seas:Property .
+# 
+# https://w3id.org/seas/Property
+
+seas:Property a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#MeasurableThing> , :SeasThing .
+# 
 # https://w3id.org/seas/Sensor
 
 seas:Sensor a owl:Class ;
 	rdfs:subClassOf :SeasThing .
+# 
+# https://w3id.org/seas/TemperatureProperty
+
+seas:TemperatureProperty a owl:Class ;
+	rdfs:subClassOf seas:Property .
+# 
+# https://w3id.org/seas/VolumeProperty
+
+seas:VolumeProperty a owl:Class ;
+	rdfs:subClassOf seas:Property .
 # 
 # 
 # 
@@ -1160,6 +1688,11 @@ seas:Sensor a owl:Class ;
 # #
 # #################################################################
 # 
+# 
+# http://dbpedia.org/resource/Barcelona
+
+<http://dbpedia.org/resource/Barcelona> a owl:NamedIndividual ;
+	owl:sameAs :Barcelona .
 # 
 # http://dbpedia.org/resource/Catalonia
 
@@ -1171,9 +1704,15 @@ seas:Sensor a owl:Class ;
 <http://dbpedia.org/resource/Spain> a owl:NamedIndividual ;
 	owl:sameAs :Spain .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Barcelona
+
+:Barcelona a owl:NamedIndividual , <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#City> ;
+	<http://www.biocenit.cat/ontologies/cao.owl#isLocated> :Catalonia , :Spain .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Catalonia
 
 :Catalonia a owl:NamedIndividual , :Spain_autonomous_community ;
+	<http://www.biocenit.cat/ontologies/cao.owl#isLocated> :Spain ;
 	rdfs:comment "Catalonia (Catalan: Catalunya, Occitan: Catalonha, Spanish: Cataluña) is an autonomous community of Spain, located on the northeastern extremity of the Iberian Peninsula. It is designated as a nationality by its Statute of Autonomy. Catalonia consists of four provinces: Barcelona, Girona, Lleida, and Tarragona. The capital and largest city is Barcelona, the second-most populated municipality in Spain and the core of the seventh-most populous urban area in the European Union. (source: wikipedia)" .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Spain
