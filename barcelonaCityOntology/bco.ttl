@@ -18,6 +18,14 @@
 # #################################################################
 # 
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#validationComment
+
+:validationComment a owl:AnnotationProperty .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#validationStatus
+
+:validationStatus a owl:AnnotationProperty .
+# 
 # http://www.w3.org/2002/07/owl#qualifiedCardinality
 
 owl:qualifiedCardinality a owl:AnnotationProperty .
@@ -717,7 +725,9 @@ _:genid39 a owl:Restriction ;
 	owl:onProperty :isPartOf ;
 	owl:hasValue :catalonia .
 
-:Catalonia_municipality rdfs:comment """Catalonia is (as of 2015) divided into 948 municipalities.
+:Catalonia_municipality :validationComment "Concept to validate"@en ;
+	:validationStatus "true"@en ;
+	rdfs:comment """Catalonia is (as of 2015) divided into 948 municipalities.
 Each municipality typically represents one significant urban settlement, of any size from village to city, with its surrounding land. This is not always the case, though. Many municipalities have merged as a result of rural depopulation or simply for greater efficiency. Some large urban areas, for example Barcelona, consist of more than one municipality, each of which previously held a separate settlement. The Catalan government encourages mergers of very small municipalities; its \"Report on the revision of Catalonia's territorial organisation model\" (the \"Roca Report (ca)\"), published in 2000 but not yet implemented, recommends many such mergers."""@en ;
 	rdfs:label "Catalonia municipality"@en .
 # 
@@ -1746,9 +1756,9 @@ _:genid88 a rdf:List ;
 	rdf:rest _:genid86 .
 
 _:genid86 a rdf:List ;
-	rdf:first _:genid91 .
+	rdf:first _:genid1902 .
 
-_:genid91 a owl:Restriction ;
+_:genid1902 a owl:Restriction ;
 	owl:onProperty :isPostalCodeOf ;
 	owl:hasValue :spain .
 
@@ -1756,9 +1766,9 @@ _:genid86 rdf:rest rdf:nil .
 
 _:genid85 a owl:Class .
 
-:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid90 .
+:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid1901 .
 
-_:genid90 a owl:Restriction ;
+_:genid1901 a owl:Restriction ;
 	owl:onProperty :isPostalCodeOf ;
 	owl:hasValue :spain .
 
@@ -1808,7 +1818,8 @@ _:genid89 a owl:Restriction ;
 :Subway_network_component a owl:Class ;
 	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid90 .
 
-_:genid90 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+_:genid90 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Subway_network .
 
 :Subway_network_component rdfs:label "Subway network component"@en .
@@ -1873,7 +1884,8 @@ _:genid90 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl
 :Train_station a owl:Class ;
 	rdfs:subClassOf :Railway_network_component , _:genid91 .
 
-_:genid91 owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
+_:genid91 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Railway_network .
 
 :Train_station rdfs:label "Train station"@en .
@@ -2306,6 +2318,8 @@ _:genid112 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 _:genid113 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 
 _:genid114 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+
+_:genid115 :validationStatus "true"^^xsd:boolean .
 # 
 # 
 # #################################################################
@@ -2316,7 +2330,7 @@ _:genid114 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 # 
 # 
 
-<http://www.biocenit.cat/ontologies/cao.owl#Airport> rdfs:comment "An airport is an aerodrome with facilities for flights to take off and land.[1][2] Airports often have facilities to store and maintain aircraft, and a control tower. An airport consists of a landing area, which comprises an aerially accessible open space including at least one operationally active surface such as a runway for a plane to take off[3] or a helipad,[4] and often includes adjacent utility buildings such as control towers, hangars[5] and terminals. Larger airports may have fixed-base operator services, airport aprons, taxiway bridges, air traffic control centres, passenger facilities such as restaurants and lounges, and emergency services. (source: wikipedia)"@en ;
+<http://www.biocenit.cat/ontologies/cao.owl#Airport> rdfs:comment "An airport is an aerodrome with facilities for flights to take off and land.Airports often have facilities to store and maintain aircraft, and a control tower. An airport consists of a landing area, which comprises an aerially accessible open space including at least one operationally active surface such as a runway for a plane to take off or a helipad, and often includes adjacent utility buildings such as control towers, hangars and terminals. Larger airports may have fixed-base operator services, airport aprons, taxiway bridges, air traffic control centres, passenger facilities such as restaurants and lounges, and emergency services. (source: wikipedia)"@en ;
 	rdfs:label "Airport"@en ;
 	rdfs:comment "airport, airdrome, aerodrome, drome (an airfield equipped with control tower and hangars as well as accommodations for passengers and cargo)"@en .
 # 
