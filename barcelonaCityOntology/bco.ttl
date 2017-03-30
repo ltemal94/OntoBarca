@@ -495,11 +495,25 @@ _:genid19 a owl:Restriction ;
 
 :Autonomous_community rdfs:label "Autonomous community"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Avenue
+
+:Avenue a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Road> ;
+	rdfs:comment "In landscaping, an avenue or allée is traditionally a straight path or road with a line of trees or large shrubs running along each side, which is used, as its French source venir (\"to come\") indicates, to emphasize the \"coming to,\" or arrival at a landscape or architectural feature. In most cases, the trees planted in an avenue will be all of the same species or cultivar, so as to give uniform appearance along the full length of the avenue. (source : wikipedia)"@en ;
+	rdfs:label "Avenue"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Axes_street
 
 :Axes_street a owl:Class ;
 	rdfs:subClassOf :Street ;
 	rdfs:label "Axes street"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Backroad
+
+:Backroad a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Road> ;
+	rdfs:comment "A backroad is a secondary type of road, usually found in rural areas. (source : wikipedia)"@en ;
+	rdfs:label "Backroad"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Barcalona_tunnel
 
@@ -731,6 +745,11 @@ _:genid39 a owl:Restriction ;
 Each municipality typically represents one significant urban settlement, of any size from village to city, with its surrounding land. This is not always the case, though. Many municipalities have merged as a result of rural depopulation or simply for greater efficiency. Some large urban areas, for example Barcelona, consist of more than one municipality, each of which previously held a separate settlement. The Catalan government encourages mergers of very small municipalities; its \"Report on the revision of Catalonia's territorial organisation model\" (the \"Roca Report (ca)\"), published in 2000 but not yet implemented, recommends many such mergers."""@en ;
 	rdfs:label "Catalonia municipality"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Catholic_school
+
+:Catholic_school a owl:Class ;
+	rdfs:subClassOf :Christian_school .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Census_population_organization
 
 :Census_population_organization a owl:Class ;
@@ -777,6 +796,19 @@ _:genid40 a owl:Restriction ;
 	owl:someValuesFrom :Charging_station_network .
 
 :Charging_station_network_component rdfs:label "Charging station network component"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Children_hospital
+
+:Children_hospital a owl:Class ;
+	rdfs:subClassOf :Specialized_hospital ;
+	rdfs:comment "A children's hospital is a hospital which offers its services exclusively to children and adolescents. Most children's hospitals can serve children from birth up to the age of 18, or in some instances, children's hospitals' doctors may treat children until they finish high school. (source : wikipedia)"@en ;
+	rdfs:label "Children hospital"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Christian_school
+
+:Christian_school a owl:Class ;
+	rdfs:subClassOf :Religious_school ;
+	rdfs:label "Christian school"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Citizen_service_point
 
@@ -859,6 +891,13 @@ _:genid42 a owl:Restriction ;
 
 :Day_care rdfs:comment "Child care or day care is the care of a child during the day by a person other than the child's legal guardians, typically performed by someone outside the child's immediate family. Day care is typically an ongoing service during specific periods, such as the parents' time at work. The service is known as child care in the United Kingdom, crèche in Ireland and New Zealand, and child care or day care in North America and Australia (although child care also has a broader meaning). The vast majority of childcare is still performed by the parents, in-house nannies or through informal arrangements with relatives, neighbors or friends. Child care in the child's own home is traditionally provided by a nanny or au pair, or by extended family members including grandparents, aunts and uncles. Child care is provided in nurseries or crèches or by a nanny or family child care provider caring for children in their own homes. It can also take on a more formal structure, with education, child development, discipline and even preschool education falling into the fold of services. (spurce:wikipedia)"@en ;
 	rdfs:label "Day Care"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Dead_end
+
+:Dead_end a owl:Class ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Road> ;
+	rdfs:comment "A dead end, also known as a cul-de-sac, is a street with only one inlet/outlet.  (source: wikipedia)"@en ;
+	rdfs:label "Dead end"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Deaths_demography
 
@@ -1092,9 +1131,23 @@ _:genid50 a owl:Restriction ;
 	rdfs:subClassOf :Gas_network_component ;
 	rdfs:label "Gas tank"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#General_hospital
+
+:General_hospital a owl:Class ;
+	rdfs:subClassOf :Hospital ;
+	rdfs:comment "General hospital, is an hospital which is set up to deal with many kinds of disease and injury, and normally has an emergency department (sometimes known as \"accident & emergency\") to deal with immediate and urgent threats to health. Larger cities may have several hospitals of varying sizes and facilities. Some hospitals, especially in the United States and Canada, have their own ambulance service. (source: wikipedia)"@en ;
+	rdfs:label "General hospital"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#GeoSparqlThing
 
 :GeoSparqlThing a owl:Class .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Geriatric_hospital
+
+:Geriatric_hospital a owl:Class ;
+	rdfs:subClassOf :Specialized_hospital ;
+	rdfs:comment "Geriatric hospital is a specialized hospital  which  focuses on health care of elderly people."@en ;
+	rdfs:label "Geriatric hospital"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Glass_waste_container
 
@@ -1171,6 +1224,12 @@ S: (n) hospital (a medical institution where sick or injured people are given me
 	rdfs:subClassOf :Ambient_conditions_property ;
 	rdfs:label "Internal ambient conditions property"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Islamic_school
+
+:Islamic_school a owl:Class ;
+	rdfs:subClassOf :Religious_school ;
+	rdfs:label "Islamic school"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Island
 
 :Island a owl:Class ;
@@ -1190,6 +1249,12 @@ _:genid53 a owl:Restriction ;
 
 :Islands_group rdfs:comment "An archipelago, sometimes called an island group or island chain, is a chain, cluster or collection of islands. The word archipelago is derived from the Greek ἄρχι- – arkhi- (\"chief\") and πέλαγος – pélagos (\"sea\") through the Italian arcipelago. In Italian, possibly following a tradition of antiquity, the Archipelago (from medieval Greek *ἀρχιπέλαγος and Latin archipelagus) was the proper name for the Aegean Sea and, later, usage shifted to refer to the Aegean Islands (since the sea is remarkable for its large number of islands). It is now used to refer to any island group or, sometimes, to a sea containing a small number of scattered islands. (source: wikipedia)"@en ;
 	rdfs:label "Islands group"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Jewish_school
+
+:Jewish_school a owl:Class ;
+	rdfs:subClassOf :Religious_school ;
+	rdfs:label "Jewish school"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Length_property
 
@@ -1478,11 +1543,30 @@ _:genid65 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Private_school
 
 :Private_school a owl:Class ;
-	rdfs:subClassOf :School , _:genid66 .
+	owl:equivalentClass _:genid66 .
 
-_:genid66 a owl:Restriction ;
+_:genid66 owl:intersectionOf _:genid69 .
+
+_:genid69 a rdf:List ;
+	rdf:first :School ;
+	rdf:rest _:genid67 .
+
+_:genid67 a rdf:List ;
+	rdf:first _:genid68 .
+
+_:genid68 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#hasOwnership> ;
 	owl:someValuesFrom <http://ontology.eil.utoronto.ca/organization.owl#privately_owned> .
+
+_:genid67 rdf:rest rdf:nil .
+
+_:genid66 a owl:Class .
+
+:Private_school rdfs:subClassOf :School , _:genid70 .
+
+_:genid70 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#hasOwnership> ;
+	owl:someValuesFrom <http://ontology.eil.utoronto.ca/organization.owl#publicly_owned> .
 
 :Private_school rdfs:label "Private school"@en .
 # 
@@ -1496,21 +1580,47 @@ _:genid66 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Province
 
 :Province a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid67 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid71 .
 
-_:genid67 a owl:Restriction ;
+_:genid71 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isConstituent> ;
 	owl:someValuesFrom :Region .
 
 :Province rdfs:comment "A province is almost always an administrative division, within a country or state. The term derives from the ancient Roman provincia, which was the major territorial and administrative unit of the Roman Empire's territorial possessions outside Italy. The term province has since been adopted by many countries, and in those with no actual provinces, it has come to mean \"outside the capital city\". While some provinces were produced artificially by colonial powers, others were formed around local groups with their own ethnic identities. Many have their own powers independent of federal authority, especially in Canada. In other countries, like China, provinces are the creation of central government, with very little autonomy. (source:Wikipedia)"@en ;
 	rdfs:label "Province"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Psychiatric_hospital
+
+:Psychiatric_hospital a owl:Class ;
+	rdfs:subClassOf :Specialized_hospital ;
+	rdfs:comment "Psychiatric hospitals, also known as mental hospitals and mental asylums, are hospitals or wards specializing in the treatment of serious psychiatric illnesses, such as autism, down syndrome, clinical depression, schizophrenia, and bipolar disorder. Psychiatric hospitals vary widely in their size and grading. Some hospitals may specialize only in short-term or outpatient therapy for low-risk patients. Others may specialize in the temporary or permanent care of residents who, as a result of a psychological disorder, require routine assistance, treatment, or a specialized and controlled environment. (source wikipedia)"@en ;
+	rdfs:label "Psychiatric hospital"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Public_school
 
 :Public_school a owl:Class ;
-	rdfs:subClassOf :School , _:genid68 .
+	owl:equivalentClass _:genid72 .
 
-_:genid68 a owl:Restriction ;
+_:genid72 owl:intersectionOf _:genid75 .
+
+_:genid75 a rdf:List ;
+	rdf:first :School ;
+	rdf:rest _:genid73 .
+
+_:genid73 a rdf:List ;
+	rdf:first _:genid808 .
+
+_:genid808 a owl:Restriction ;
+	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#hasOwnership> ;
+	owl:someValuesFrom <http://ontology.eil.utoronto.ca/organization.owl#publicly_owned> .
+
+_:genid73 rdf:rest rdf:nil .
+
+_:genid72 a owl:Class .
+
+:Public_school rdfs:subClassOf :School , _:genid809 .
+
+_:genid809 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#hasOwnership> ;
 	owl:someValuesFrom <http://ontology.eil.utoronto.ca/organization.owl#publicly_owned> .
 
@@ -1533,18 +1643,18 @@ _:genid68 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railway_network
 
 :Railway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid69 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid76 .
 
-_:genid69 a owl:Restriction ;
+_:genid76 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Railway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railway_network_component
 
 :Railway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid70 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid77 .
 
-_:genid70 a owl:Restriction ;
+_:genid77 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Railway_network .
 
@@ -1553,9 +1663,9 @@ _:genid70 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Railways_routes_network
 
 :Railways_routes_network a owl:Class ;
-	rdfs:subClassOf :Railway_network , _:genid71 .
+	rdfs:subClassOf :Railway_network , _:genid78 .
 
-_:genid71 a owl:Restriction ;
+_:genid78 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Railway_network .
 # 
@@ -1567,15 +1677,15 @@ _:genid71 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Region
 
 :Region a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid72 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Administrative_built_domain_element> , _:genid79 .
 
-_:genid72 a owl:Restriction ;
+_:genid79 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isConstituent> ;
 	owl:someValuesFrom :Municipality .
 
-:Region rdfs:subClassOf _:genid73 .
+:Region rdfs:subClassOf _:genid80 .
 
-_:genid73 a owl:Restriction ;
+_:genid80 a owl:Restriction ;
 	owl:onProperty :isLocatedInProvince ;
 	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	owl:onClass :Province .
@@ -1583,12 +1693,19 @@ _:genid73 a owl:Restriction ;
 :Region rdfs:comment "In geography, regions are areas that are broadly divided by physical characteristics (physical geography), human impact characteristics (human geography), and the interaction of humanity and the environment (environmental geography). Geographic regions and sub-regions are mostly described by their imprecisely defined, and sometimes transitory boundaries, except in human geography, where jurisdiction areas such as national borders are defined in law.(source:Wikipedia)"@en ;
 	rdfs:label "Region"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Religious_school
+
+:Religious_school a owl:Class ;
+	rdfs:subClassOf :Private_school ;
+	rdfs:comment "A Religious school is a private primary or secondary school affiliated with a religious organization, and whose curriculum includes general religious education in addition to secular subjects, such as science, mathematics and language arts."@en ;
+	rdfs:label "Religious school"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Road_network
 
 :Road_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid74 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid81 .
 
-_:genid74 a owl:Restriction ;
+_:genid81 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Thoroughfare .
 # 
@@ -1647,18 +1764,18 @@ _:genid74 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensors_network
 
 :Sensors_network a owl:Class ;
-	rdfs:subClassOf :Devices_network , _:genid75 .
+	rdfs:subClassOf :Devices_network , _:genid82 .
 
-_:genid75 a owl:Restriction ;
+_:genid82 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Sensors_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sensors_network_component
 
 :Sensors_network_component a owl:Class ;
-	rdfs:subClassOf :Device_network_component , _:genid76 .
+	rdfs:subClassOf :Device_network_component , _:genid83 .
 
-_:genid76 a owl:Restriction ;
+_:genid83 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Sensors_network .
 
@@ -1678,9 +1795,9 @@ _:genid76 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Sewer_network_component
 
 :Sewer_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid77 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid84 .
 
-_:genid77 a owl:Restriction ;
+_:genid84 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Sewer_network> .
 # 
@@ -1704,40 +1821,40 @@ _:genid77 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Spain_autonomous_community
 
 :Spain_autonomous_community a owl:Class ;
-	owl:equivalentClass _:genid78 .
+	owl:equivalentClass _:genid85 .
 
-_:genid78 owl:intersectionOf _:genid81 .
+_:genid85 owl:intersectionOf _:genid88 .
 
-_:genid81 a rdf:List ;
+_:genid88 a rdf:List ;
 	rdf:first :Autonomous_community ;
-	rdf:rest _:genid79 .
+	rdf:rest _:genid86 .
 
-_:genid79 a rdf:List ;
-	rdf:first _:genid80 .
+_:genid86 a rdf:List ;
+	rdf:first _:genid87 .
 
-_:genid80 a owl:Restriction ;
+_:genid87 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isLocated> ;
 	owl:hasValue :spain .
 
-_:genid79 rdf:rest rdf:nil .
+_:genid86 rdf:rest rdf:nil .
 
-_:genid78 a owl:Class .
+_:genid85 a owl:Class .
 
-:Spain_autonomous_community rdfs:subClassOf :Autonomous_community , _:genid82 .
+:Spain_autonomous_community rdfs:subClassOf :Autonomous_community , _:genid89 .
 
-_:genid82 a owl:Restriction ;
+_:genid89 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isConstituent> ;
 	owl:someValuesFrom :Province .
 
-:Spain_autonomous_community rdfs:subClassOf _:genid83 .
+:Spain_autonomous_community rdfs:subClassOf _:genid90 .
 
-_:genid83 a owl:Restriction ;
+_:genid90 a owl:Restriction ;
 	owl:onProperty :hasCapital ;
 	owl:someValuesFrom :Capital .
 
-:Spain_autonomous_community rdfs:subClassOf _:genid84 .
+:Spain_autonomous_community rdfs:subClassOf _:genid91 .
 
-_:genid84 a owl:Restriction ;
+_:genid91 a owl:Restriction ;
 	owl:onProperty :isPartOf ;
 	owl:hasValue :spain .
 
@@ -1747,32 +1864,39 @@ _:genid84 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Spain_postal_code
 
 :Spain_postal_code a owl:Class ;
-	owl:equivalentClass _:genid85 .
+	owl:equivalentClass _:genid92 .
 
-_:genid85 owl:intersectionOf _:genid88 .
+_:genid92 owl:intersectionOf _:genid95 .
 
-_:genid88 a rdf:List ;
+_:genid95 a rdf:List ;
 	rdf:first :Postal_code ;
-	rdf:rest _:genid86 .
+	rdf:rest _:genid93 .
 
-_:genid86 a rdf:List ;
-	rdf:first _:genid1902 .
+_:genid93 a rdf:List ;
+	rdf:first _:genid810 .
 
-_:genid1902 a owl:Restriction ;
+_:genid810 a owl:Restriction ;
 	owl:onProperty :isPostalCodeOf ;
 	owl:hasValue :spain .
 
-_:genid86 rdf:rest rdf:nil .
+_:genid93 rdf:rest rdf:nil .
 
-_:genid85 a owl:Class .
+_:genid92 a owl:Class .
 
-:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid1901 .
+:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid811 .
 
-_:genid1901 a owl:Restriction ;
+_:genid811 a owl:Restriction ;
 	owl:onProperty :isPostalCodeOf ;
 	owl:hasValue :spain .
 
 :Spain_postal_code rdfs:label "Spain postal code"@en .
+# 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Specialized_hospital
+
+:Specialized_hospital a owl:Class ;
+	rdfs:subClassOf :Hospital ;
+	rdfs:comment "Specialised hospitals is a hospital which is spacialized in one kind of  patient or disease. It  include trauma centres, rehabilitation hospitals, children's hospitals, seniors' (geriatric) hospitals, and hospitals for dealing with specific medical needs such as psychiatric problems (see psychiatric hospital),"@en ;
+	rdfs:label "Specialized hospital"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Speed_property
 
@@ -1789,7 +1913,7 @@ _:genid1901 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Street
 
 :Street a owl:Class ;
-	rdfs:subClassOf :Thoroughfare ;
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Road> ;
 	rdfs:label "Street"@en .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Streetligths_electrical_panel
@@ -1807,18 +1931,18 @@ _:genid1901 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_network
 
 :Subway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid89 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid96 .
 
-_:genid89 a owl:Restriction ;
+_:genid96 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Subway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Subway_network_component
 
 :Subway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid90 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid97 .
 
-_:genid90 a owl:Restriction ;
+_:genid97 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Subway_network .
 
@@ -1882,9 +2006,9 @@ _:genid90 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_station
 
 :Train_station a owl:Class ;
-	rdfs:subClassOf :Railway_network_component , _:genid91 .
+	rdfs:subClassOf :Railway_network_component , _:genid98 .
 
-_:genid91 a owl:Restriction ;
+_:genid98 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Railway_network .
 
@@ -1893,9 +2017,9 @@ _:genid91 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Train_stations_network
 
 :Train_stations_network a owl:Class ;
-	rdfs:subClassOf :Railway_network , _:genid92 .
+	rdfs:subClassOf :Railway_network , _:genid99 .
 
-_:genid92 a owl:Restriction ;
+_:genid99 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Railway_network .
 # 
@@ -1909,9 +2033,9 @@ _:genid92 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway
 
 :Tramway a owl:Class ;
-	rdfs:subClassOf :Tramway_network_component , _:genid93 .
+	rdfs:subClassOf :Tramway_network_component , _:genid100 .
 
-_:genid93 a owl:Restriction ;
+_:genid100 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 
@@ -1920,18 +2044,18 @@ _:genid93 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_network
 
 :Tramway_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid94 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid101 .
 
-_:genid94 a owl:Restriction ;
+_:genid101 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway_network_component .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_network_component
 
 :Tramway_network_component a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid95 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Mobility_network_component> , _:genid102 .
 
-_:genid95 a owl:Restriction ;
+_:genid102 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 
@@ -1940,15 +2064,15 @@ _:genid95 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_routes_network
 
 :Tramway_routes_network a owl:Class ;
-	rdfs:subClassOf :Tramway_network , _:genid96 .
+	rdfs:subClassOf :Tramway_network , _:genid103 .
 
-_:genid96 a owl:Restriction ;
+_:genid103 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway .
 
-:Tramway_routes_network rdfs:subClassOf _:genid97 .
+:Tramway_routes_network rdfs:subClassOf _:genid104 .
 
-_:genid97 a owl:Restriction ;
+_:genid104 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 
@@ -1957,9 +2081,9 @@ _:genid97 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_stop
 
 :Tramway_stop a owl:Class ;
-	rdfs:subClassOf :Tramway_network_component , _:genid98 .
+	rdfs:subClassOf :Tramway_network_component , _:genid105 .
 
-_:genid98 a owl:Restriction ;
+_:genid105 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Tramway_network .
 
@@ -1968,15 +2092,15 @@ _:genid98 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tramway_stops_nework
 
 :Tramway_stops_nework a owl:Class ;
-	rdfs:subClassOf :Tramway_network , _:genid99 .
+	rdfs:subClassOf :Tramway_network , _:genid106 .
 
-_:genid99 a owl:Restriction ;
+_:genid106 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tramway_stop .
 
-:Tramway_stops_nework rdfs:subClassOf _:genid100 .
+:Tramway_stops_nework rdfs:subClassOf _:genid107 .
 
-_:genid100 a owl:Restriction ;
+_:genid107 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isRelatedTo> ;
 	owl:someValuesFrom :Tramway_network .
 # 
@@ -2002,9 +2126,9 @@ _:genid100 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Tunnel_network
 
 :Tunnel_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid101 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Mobility_network> , _:genid108 .
 
-_:genid101 a owl:Restriction ;
+_:genid108 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Tunnel .
 # 
@@ -2043,24 +2167,24 @@ _:genid101 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_network
 
 :Water_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid102 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/cao.owl#Network_infrastructure> , _:genid109 .
 
-_:genid102 a owl:Restriction ;
+_:genid109 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#isNodeOf> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Water_cycle> .
 
-:Water_network rdfs:subClassOf _:genid103 .
+:Water_network rdfs:subClassOf _:genid110 .
 
-_:genid103 a owl:Restriction ;
+_:genid110 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#transports> ;
 	owl:someValuesFrom <http://www.biocenit.cat/ontologies/cao.owl#Water> .
 # 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Water_network_component
 
 :Water_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid104 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid111 .
 
-_:genid104 a owl:Restriction ;
+_:genid111 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Water_network .
 # 
@@ -2101,25 +2225,25 @@ _:genid104 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wind_direction_property
 
 :Wind_direction_property a owl:Class ;
-	owl:equivalentClass _:genid105 .
+	owl:equivalentClass _:genid112 .
 
-_:genid105 owl:intersectionOf _:genid108 .
+_:genid112 owl:intersectionOf _:genid115 .
 
-_:genid108 a rdf:List ;
+_:genid115 a rdf:List ;
 	rdf:first :Direction_property ;
-	rdf:rest _:genid106 .
+	rdf:rest _:genid113 .
 
-_:genid106 a rdf:List ;
-	rdf:first _:genid107 .
+_:genid113 a rdf:List ;
+	rdf:first _:genid114 .
 
-_:genid107 a owl:Restriction ;
+_:genid114 a owl:Restriction ;
 	owl:onProperty seas:isPropertyOf ;
 	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	owl:onClass :Wind .
 
-_:genid106 rdf:rest rdf:nil .
+_:genid113 rdf:rest rdf:nil .
 
-_:genid105 a owl:Class .
+_:genid112 a owl:Class .
 
 :Wind_direction_property rdfs:subClassOf :Direction_property ;
 	rdfs:label "Wind direction property"@en .
@@ -2127,9 +2251,9 @@ _:genid105 a owl:Class .
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wind_speed_property
 
 :Wind_speed_property a owl:Class ;
-	rdfs:subClassOf :Speed_property , _:genid109 .
+	rdfs:subClassOf :Speed_property , _:genid116 .
 
-_:genid109 a owl:Restriction ;
+_:genid116 a owl:Restriction ;
 	owl:onProperty seas:isPropertyOf ;
 	owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
 	owl:onClass :Wind .
@@ -2139,9 +2263,9 @@ _:genid109 a owl:Restriction ;
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wireless_network
 
 :Wireless_network a owl:Class ;
-	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Data_communication_network> , _:genid110 .
+	rdfs:subClassOf <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#Data_communication_network> , _:genid117 .
 
-_:genid110 a owl:Restriction ;
+_:genid117 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#hasElement> ;
 	owl:someValuesFrom :Wirelss_point .
 
@@ -2151,9 +2275,9 @@ Wireless networking is a method by which homes, telecommunications networks and 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Wireless_network_component
 
 :Wireless_network_component a owl:Class ;
-	rdfs:subClassOf :Network_infrastructure_component , _:genid111 .
+	rdfs:subClassOf :Network_infrastructure_component , _:genid118 .
 
-_:genid111 a owl:Restriction ;
+_:genid118 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/city_anatomy/CA.owl#isElementOf> ;
 	owl:someValuesFrom :Wireless_network .
 # 
@@ -2313,13 +2437,13 @@ seas:VolumeProperty a owl:Class ;
 	rdfs:seeAlso "http://dbpedia.org/resource/Spain" .
 # 
 
-_:genid112 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+_:genid119 :validationStatus "true"^^xsd:boolean .
 
-_:genid113 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+_:genid120 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 
-_:genid114 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
+_:genid121 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 
-_:genid115 :validationStatus "true"^^xsd:boolean .
+_:genid122 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger .
 # 
 # 
 # #################################################################
