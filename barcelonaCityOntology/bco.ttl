@@ -1224,6 +1224,13 @@ S: (n) hospital (a medical institution where sick or injured people are given me
 	rdfs:subClassOf :Ambient_conditions_property ;
 	rdfs:label "Internal ambient conditions property"@en .
 # 
+# http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#International_university
+
+:International_university a owl:Class ;
+	rdfs:subClassOf :University ;
+	rdfs:comment "An international university is funded by the governments of many countries and thereby is controlled by the officials from the government of different countries. These universities are often formed by the regional and international organizations. (source : wikipedia)"@en ;
+	rdfs:label "International university"@en .
+# 
 # http://www.semanticweb.org/ontologies/2017/1/BarcelonaCityOntology#Islamic_school
 
 :Islamic_school a owl:Class ;
@@ -1608,9 +1615,9 @@ _:genid75 a rdf:List ;
 	rdf:rest _:genid73 .
 
 _:genid73 a rdf:List ;
-	rdf:first _:genid808 .
+	rdf:first _:genid816 .
 
-_:genid808 a owl:Restriction ;
+_:genid816 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#hasOwnership> ;
 	owl:someValuesFrom <http://ontology.eil.utoronto.ca/organization.owl#publicly_owned> .
 
@@ -1618,9 +1625,9 @@ _:genid73 rdf:rest rdf:nil .
 
 _:genid72 a owl:Class .
 
-:Public_school rdfs:subClassOf :School , _:genid809 .
+:Public_school rdfs:subClassOf :School , _:genid817 .
 
-_:genid809 a owl:Restriction ;
+_:genid817 a owl:Restriction ;
 	owl:onProperty <http://www.biocenit.cat/ontologies/cao.owl#hasOwnership> ;
 	owl:someValuesFrom <http://ontology.eil.utoronto.ca/organization.owl#publicly_owned> .
 
@@ -1873,9 +1880,9 @@ _:genid95 a rdf:List ;
 	rdf:rest _:genid93 .
 
 _:genid93 a rdf:List ;
-	rdf:first _:genid810 .
+	rdf:first _:genid818 .
 
-_:genid810 a owl:Restriction ;
+_:genid818 a owl:Restriction ;
 	owl:onProperty :isPostalCodeOf ;
 	owl:hasValue :spain .
 
@@ -1883,9 +1890,9 @@ _:genid93 rdf:rest rdf:nil .
 
 _:genid92 a owl:Class .
 
-:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid811 .
+:Spain_postal_code rdfs:subClassOf :Postal_code , _:genid819 .
 
-_:genid811 a owl:Restriction ;
+_:genid819 a owl:Restriction ;
 	owl:onProperty :isPostalCodeOf ;
 	owl:hasValue :spain .
 
