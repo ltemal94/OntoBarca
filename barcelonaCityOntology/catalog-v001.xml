@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog prefer="public" xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+    <uri id="Imports Wizard Entry" name="http://www.w3.org/2006/time" uri="http://www.w3.org/2006/time#"/>
+    <uri id="User Entered Import Resolution" name="http://www.biocenit.cat/ontologies/cao.owl" uri="file:/C:/Users/DK5352/workspace/Barcelone/cityProtocol/cao.owl"/>
+    <group id="Folder Repository, directory=, recursive=true, Auto-Update=true, version=2" prefer="public" xml:base=""/>
+</catalog>
